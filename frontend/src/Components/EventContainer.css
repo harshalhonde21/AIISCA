@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.child-event-container {
+    height: auto;
+    background-color: whitesmoke;
+    /* margin-bottom: 120px; */
+    display: flex;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2); 
+  }
+
+.event-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image-container img {
+  max-width: 100%; 
+  width: 500px;
+  height: auto;
+}
+
+.event-info-container {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding: 15px;
+}
+
+.event-info-time-container {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.time-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+
+.time-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.time-value {
+  font-size: 14px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.remaining-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.event-description-container {
+  margin-top: 20px;
+}
+
+.event-description-container h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.event-description-container p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  width: 27rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.event-description-container button {
+  padding: 10px 20px;
+  color: #1E31D6;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: none;
+  font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .child-event-container {
+    flex-direction: column;
+  }
+
+  .time-box {
+    width: 40px; 
+    height: 40px;
+    padding: 20px; 
+  }
+
+  .time-label {
+    font-size: 10px; 
+  }
+
+  .time-value {
+    font-size: 12px; 
+  }
+
+  .event-description-container h2 {
+    font-size: 16px;
+  }
+
+  .event-description-container p {
+    font-size: 12px; 
+    width: auto; 
+  }
+
+  .event-description-container button {
+    font-size: 14px; /* Decrease button font size */
+  }
+}

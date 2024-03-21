@@ -1,0 +1,15 @@
+video {
+  margin-top: 105px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.event-container {
+  width: auto;
+  height: 376px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

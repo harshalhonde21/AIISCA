@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Stencil+One&display=swap");
+
+.about-component-container {
+  height: 400px;
+  background-color: #1e31d6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12rem;
+}
+.heading-about-component {
+  position: relative;
+  font-family: "Saira Stencil One", sans-serif;
+  color: white;
+  font-size: 105px;
+  line-height: 127px;
+  width: 28rem;
+  font-weight: 400;
+}
+
+.heading-about-component::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80%;
+  height: 4px;
+  background-color: #efd703;
+}
+
+.info-about-component {
+  font-family: "Poppins", sans-serif;
+  width: 30rem;
+  color: whitesmoke;
+  text-align: justify;
+  line-height: 28px;
+}
+
