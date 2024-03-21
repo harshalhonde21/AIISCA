@@ -101,7 +101,7 @@
 @media only screen and (max-width: 768px) {
   .child-event-container {
     flex-direction: column;
-    margin-bottom: 0;
+    margin-bottom: 5rem;
   }
 
   .time-box {
