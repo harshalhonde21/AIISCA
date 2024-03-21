@@ -34,5 +34,36 @@
   color: whitesmoke;
   text-align: justify;
   line-height: 28px;
+  padding: 2rem;
 }
+
+@media screen and (max-width: 1279px) {
+  .about-component-container {
+    flex-direction: column;
+    margin-top: 8rem;
+    height: 30rem;
+    padding: 1rem;
+  }
+  .heading-about-component {
+    font-size: 3rem;
+  }
+
+  .info-about-component {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .about-component-container {
+    padding: 3rem;
+  }
+  .heading-about-component {
+    font-size: 2rem;
+  }
+
+  .info-about-component {
+    font-size: 0.6rem;
+  }
+}
+
 

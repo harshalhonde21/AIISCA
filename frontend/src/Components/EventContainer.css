@@ -3,7 +3,6 @@
 .child-event-container {
     height: auto;
     background-color: whitesmoke;
-    /* margin-bottom: 120px; */
     display: flex;
     padding: 25px;
     border-radius: 15px;
@@ -102,6 +101,7 @@
 @media only screen and (max-width: 768px) {
   .child-event-container {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .time-box {
