@@ -1,0 +1,79 @@
+.leader-component {
+  position: relative;
+  height: auto;
+  min-height: 450px;
+  background-color: #1e31d6;
+}
+
+.leader-heading-component {
+  position: absolute;
+  top: 2rem;
+  left: 8vw;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.leader-heading-component::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 98%;
+  height: 4px;
+  background-color: #efd703;
+}
+.main-leader-component {
+  position: absolute;
+  top: 6rem;
+  left: 8vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: calc(100% - 15vw);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.card-team-member {
+  width: calc(25% - 8rem);
+  border: 3px solid #1e31d6;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(8, 33, 219, 0.3);
+}
+
+.card-team-member img {
+  width: 10rem;
+  height: 9rem;
+}
+
+.name-leader {
+  width: calc(100% - 5rem);
+  margin-top: 1rem;
+  border-radius: 15px;
+  color: #1e31d6;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1534px) {
+  .main-leader-component {
+    top: 10rem;
+  }
+
+  .card-team-member {
+    width: calc(50% - 0.5rem);
+  }
+
+  .name-leader {
+    width: calc(100% - 2rem);
+  }
+}

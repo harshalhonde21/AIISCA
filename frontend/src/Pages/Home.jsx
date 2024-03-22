@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import EventContainer from "../Components/EventContainer";
 import AboutContainer from "../Components/AboutContainer";
 import "./Home.css";
+import LeaderContainer from "../Components/LeaderContainer";
 
 const Home = () => {
   return (
@@ -15,6 +16,9 @@ const Home = () => {
       </div>
       <div className="about-container">
         <AboutContainer />
+      </div>
+      <div className="team-container">
+        <LeaderContainer />
       </div>
     </Fragment>
   );

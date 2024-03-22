@@ -10,6 +10,7 @@ import Donate from "./Pages/Donate";
 import Membership from "./Pages/Membership";
 import Event from "./Pages/Event";
 import Gallery from "./Pages/Gallery";
+import "./App.css"
 
 const App = () => {
   return (
