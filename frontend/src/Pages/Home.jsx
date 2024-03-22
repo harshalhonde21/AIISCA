@@ -3,6 +3,7 @@ import EventContainer from "../Components/EventContainer";
 import AboutContainer from "../Components/AboutContainer";
 import "./Home.css";
 import LeaderContainer from "../Components/LeaderContainer";
+import BlogContainer from "../Components/BlogContainer";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
       </div>
       <div className="team-container">
         <LeaderContainer />
+      </div>
+      <div className="blog-container">
+        <BlogContainer />
       </div>
     </Fragment>
   );
