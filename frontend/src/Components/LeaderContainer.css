@@ -64,7 +64,26 @@
   font-weight: bold;
 }
 
+.leader-button{
+  position: absolute;
+  top: 24rem;
+  left: 8vw;
+  padding: 0.5rem;
+  color: #1e31d6;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-family: "poppins";
+}
+
 @media screen and (max-width: 1534px) {
+  .leader-component {
+    min-height: 540px;
+  }
+
   .main-leader-component {
     top: 10rem;
   }
@@ -76,4 +95,10 @@
   .name-leader {
     width: calc(100% - 2rem);
   }
+
+  .leader-button{
+    top: 30rem;
+  }
 }
+
+

@@ -14,6 +14,7 @@ const LeaderContainer = () => {
             <div className="name-leader">Harshal</div>
           </div>
         </div>
+        <button className="leader-button">Read More</button>
       </div>
     </Fragment>
   )
