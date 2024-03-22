@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .child-event-container {
-    height: auto;
-    background-color: whitesmoke;
-    display: flex;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2); 
-  }
+  height: auto;
+  background-color: whitesmoke;
+  display: flex;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+}
 
 .event-image-container {
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .event-image-container img {
-  max-width: 100%; 
+  max-width: 100%;
   width: 500px;
   height: auto;
 }
@@ -87,7 +87,7 @@
 
 .event-description-container button {
   padding: 10px 20px;
-  color: #1E31D6;
+  color: #1e31d6;
   cursor: pointer;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
@@ -96,8 +96,6 @@
   font-weight: bold;
 }
 
-
-
 @media only screen and (max-width: 768px) {
   .child-event-container {
     flex-direction: column;
@@ -105,17 +103,17 @@
   }
 
   .time-box {
-    width: 40px; 
+    width: 40px;
     height: 40px;
-    padding: 20px; 
+    padding: 20px;
   }
 
   .time-label {
-    font-size: 10px; 
+    font-size: 10px;
   }
 
   .time-value {
-    font-size: 12px; 
+    font-size: 12px;
   }
 
   .event-description-container h2 {
@@ -123,11 +121,67 @@
   }
 
   .event-description-container p {
-    font-size: 12px; 
-    width: auto; 
+    font-size: 12px;
+    width: auto;
   }
 
   .event-description-container button {
     font-size: 14px; /* Decrease button font size */
   }
 }
+
+/* NoCounting CSS */
+
+.counting-container {
+  height: auto;
+  background-color: #1e31d6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-around;
+  padding: 25px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+}
+
+.count-sub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.name-count,
+.count-number {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.react-icons {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .counting-container {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem; 
+    padding: 15px; 
+  }
+  
+  .count-sub-container {
+    width: 100%; 
+    margin-bottom: 1rem; 
+  }
+  
+  .react-icons {
+    font-size: 2rem; 
+  }
+}
+

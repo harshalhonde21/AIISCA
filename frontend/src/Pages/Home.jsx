@@ -4,6 +4,7 @@ import AboutContainer from "../Components/AboutContainer";
 import "./Home.css";
 import LeaderContainer from "../Components/LeaderContainer";
 import BlogContainer from "../Components/BlogContainer";
+import NoCounting from "../Components/NoCounting";
 
 const Home = () => {
   return (
@@ -23,6 +24,9 @@ const Home = () => {
       </div>
       <div className="blog-container">
         <BlogContainer />
+      </div>
+      <div className="count-container">
+        <NoCounting />
       </div>
     </Fragment>
   );
