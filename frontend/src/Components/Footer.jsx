@@ -3,10 +3,14 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import "./Footer.css";
+import NewsLatter from './NewsLatter';
 
 const Footer = () => {
   return (
     <Fragment>
+      <div className="newsletter-container">
+        <NewsLatter />
+      </div>
       <footer className="footer">
         <div className="section">
           <div className="email-signup">

@@ -64,15 +64,100 @@ ul li {
   color: #1e31d6;
 }
 
-
 .footer-para {
-    width: 350px;
-    font-family: "Montserrat";
-  }
+  width: 350px;
+  font-family: "Montserrat";
+}
+
+.newsletter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (max-width: 768px) {
-
   .footer {
     gap: 50px;
   }
+}
+
+/* newsletter css starts here */
+
+.newsletter-component {
+  background-color: #1e31d6;
+  margin-top: 5rem;padding: 70px 10%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.heading-newsletter-component {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 52.18px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.input-container-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.input-container-letter input {
+  flex: 1;
+  margin-right: 10px;
+  border: 1px solid #d4d4d8;
+  background-color: transparent;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 10px;  
+  font-family: "Poppins";
+}
+
+.input-container-letter input::placeholder{
+    color: #ffffff;
+}
+
+.subscribe {
+  background-color: #ffffff;
+  color: #1e31d6;
+  border: none;
+  padding: 10px 40px 10px 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Poppins";
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 30.44px;
+  letter-spacing: -0.21741357445716858px;
+  text-align: right;
+  border-radius: 15px;
+}
+
+.subscribe:hover {
+  background-color: #0c1a7e;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .input-container-letter {
+    flex-direction: column;
+  }
+
+  .input-container-letter input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-component {
+    padding: 70px 10%; 
+  }
+  .input-container-letter input {
+    margin-bottom: 10px;
+  }
+
 }
