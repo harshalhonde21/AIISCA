@@ -1,71 +1,78 @@
 .footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 180px;
-    padding: 85px 35px 35px 35px;
-  }
-  
-  .section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  z {
-    font-size: 1rem;
-    color: #52525B;
-  }
-  
-  .section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 180px;
+  padding: 85px 35px 35px 35px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+z {
+  font-size: 1rem;
+  color: #52525b;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+  color: #1e31d6;
+}
+
+.section ul li,
+z {
+  font-family: "Montserrat";
+  color: #52525b;
+}
+
+.email-signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-signup button:hover {
+  background-color: var(--color-3);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+  font-family: var(--font-2);
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.social-icons svg {
+  color: var(--color-6);
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  color: #1e31d6;
+}
+
+
+.footer-para {
+    width: 350px;
     font-family: "Montserrat";
-    color: #1e31d6;
   }
 
-  .section ul li,z{
-    font-family: "Montserrat";
-    color: #52525B;
+@media (max-width: 768px) {
+
+  .footer {
+    gap: 50px;
   }
-  
-  .email-signup {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  
-  .email-signup button:hover {
-    background-color: var(--color-3);
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin-bottom: 5px;
-    font-family: var(--font-2);
-    font-size: 1rem;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .social-icons svg {
-    color: var(--color-6);
-    cursor: pointer;
-  }
-  
-  .social-icons svg:hover {
-    color: #1e31d6;
-  }
-  
-  @media (max-width: 768px) {
-    .footer {
-      gap: 50px;
-    }
 }

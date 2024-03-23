@@ -10,8 +10,8 @@ const Footer = () => {
       <footer className="footer">
         <div className="section">
           <div className="email-signup">
-          <img style={{height:"80px", width:'90px'}} src="/logo.png" alt="" />
-            <div style={{width:'400px', fontFamily:'Montserrat'}}>Clarity gives you the blocks and components you need to create a truly professional website.</div>
+          <img style={{height:"80px", width:'90px', marginLeft:'-1.2rem'}} src="/logo.png" alt="" />
+            <div className='footer-para'>Clarity gives you the blocks and components you need to create a truly professional website.</div>
             <div className="social-icons">
               <RiTwitterXFill />
               <FaFacebook />
