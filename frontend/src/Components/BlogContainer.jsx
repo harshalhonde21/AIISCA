@@ -29,6 +29,7 @@ const BlogContainer = () => {
                         </div>
                         
                     </div>
+                    
                 </div>
             </div>
         </Fragment>
