@@ -13,6 +13,11 @@ const LeaderContainer = () => {
             <img src="/logo.png" alt="" />
             <div className="name-leader">Harshal</div>
           </div>
+          <div className="card-team-member">
+            <img src="/logo.png" alt="" />
+            <div className="name-leader">Harshal</div>
+          </div>
+          
         </div>
         <button className="leader-button">Read More</button>
       </div>

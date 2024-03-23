@@ -1,29 +1,21 @@
 .leader-component {
-  position: relative;
   height: auto;
   min-height: 450px;
   background-color: #1e31d6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .leader-heading-component {
-  position: absolute;
-  top: 2rem;
-  left: 8vw;
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
-.leader-heading-component::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 98%;
-  height: 4px;
-  background-color: #efd703;
-}
+
 .main-leader-component {
-  position: absolute;
   top: 6rem;
   left: 8vw;
   display: flex;
@@ -99,6 +91,11 @@
   .leader-button{
     top: 30rem;
   }
+
+  
+.leader-heading-component {
+  text-align: center;
+}
 }
 
 
