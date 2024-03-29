@@ -19,7 +19,7 @@ const LeaderContainer = () => {
           </div>
           
         </div>
-        <button className="leader-button">Read More</button>
+        {/* <button className="leader-button">Read More</button> */}
       </div>
     </Fragment>
   )
