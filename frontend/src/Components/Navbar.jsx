@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,28 +18,28 @@ const Navbar = () => {
         </div>
         <div className={`nav-links ${isOpen ? "active" : ""}`}>
           <ul>
-            <li>
+            <li className={location.pathname === "/" ? "active" : ""}>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/about" ? "active" : ""}>
               <Link to="/about">About Us</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/event" ? "active" : ""}>
               <Link to="/event">Event</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/gallery" ? "active" : ""}>
               <Link to="/gallery">Gallery</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/contact" ? "active" : ""}>
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/membership" ? "active" : ""}>
               <Link to="/membership">Membership</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/blog" ? "active" : ""}>
               <Link to="/blog">Blog</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/donate" ? "active" : ""}>
               <Link to="/donate">Donate Us</Link>
             </li>
           </ul>

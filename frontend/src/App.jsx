@@ -1,7 +1,6 @@
 import { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
@@ -13,9 +12,11 @@ import Gallery from "./Pages/Gallery";
 import "./App.css"
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <Fragment>
-      <Navbar />
+      <Navbar location={location} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

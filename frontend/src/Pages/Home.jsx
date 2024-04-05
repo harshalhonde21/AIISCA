@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 import EventContainer from "../Components/EventContainer";
 import AboutContainer from "../Components/AboutContainer";
-import "./Home.css";
+import "../Css/Home.css";
 import LeaderContainer from "../Components/LeaderContainer";
 import BlogContainer from "../Components/BlogContainer";
 import NoCounting from "../Components/NoCounting";
+import Footer from "../Components/Footer"
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
       <div className="count-container">
         <NoCounting />
       </div>
+      <Footer />
     </Fragment>
   );
 };

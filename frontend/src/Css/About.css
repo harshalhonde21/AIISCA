@@ -57,8 +57,9 @@
   }
 
   .image-about-component img{
-    width: 22rem;
-    margin-left: 2.5rem;
+    width: 20rem;
+    margin-left: 2rem;
+    border-radius: 35px;
   }
 
 }
@@ -118,9 +119,9 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .head-para-combine-component {
-    width: 90%;
+    width: 80%;
     max-width: 40rem;
     margin-top: 2rem;
   }
@@ -133,10 +134,12 @@
 
 /* fourth page */
 
-.fourth-page-container{
+/* fourth page */
+.fourth-page-container {
+  position: relative; /* Ensure relative positioning */
   width: 100%;
   height: auto;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,23 +167,101 @@
   background-color: gold;
 }
 
-.list-of-work{
-  width: 80rem;
+.list-of-work {
+  width: 80%;
   margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* Ensure relative positioning */
 }
 
-.list-of-work ul li{
-  font-family: "Poppins";
+.list-of-work ul li {
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
   margin-bottom: 1.8rem;
   text-align: justify;
+  position: relative; /* Ensure relative positioning */
 }
 
-.list-of-work ul{
+.list-of-work ul {
   list-style-type: disc;
 }
 
 .list-of-work ul li::marker {
   color: #1e31d6;
 }
+
+.image-behind-list {
+  position: absolute;
+  top: -30%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 40rem;
+  z-index: -1; 
+}
+
+.image-behind-list2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rem;
+  z-index: -1; 
+}
+
+.image-behind-list3 {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  transform: translateX(-50%);
+  width: 20rem;
+  z-index: -1; 
+}
+
+@media screen and (max-width: 768px) {
+  .list-of-work {
+    width: 90%; 
+  }
+
+  .list-of-work ul li {
+    font-size: 1.2rem; 
+  }
+
+  .fourth-focus-component {
+    font-size: 1.5rem;
+  }
+
+  .list-of-work ul {
+    padding: 2rem;
+  }
+
+  .fourth-focus-component::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background-color: gold;
+  }
+
+  .image-behind-list {
+    top: 60%;
+    left: 10%;
+    width: 20rem;
+  }
+  
+  .image-behind-list2 {
+    top: 40%;
+    left: 50%;
+    width: 10rem;
+  }
+  
+  .image-behind-list3 {
+    top: 5%;
+    right: -30%;
+    width: 15rem;
+  }
+}
+

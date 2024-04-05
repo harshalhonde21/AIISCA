@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import AboutContainer from "../Components/AboutContainer";
-import "./About.css";
+import "../Css/About.css";
 import Footer from "../Components/Footer";
 
 const About = () => {
@@ -102,6 +102,9 @@ const About = () => {
         {/* fourth and last page start here */}
 
         <section className="fourth-page-container">
+          <img src="/chakra.svg" alt="" className="image-behind-list" />
+          <img src="/chakra2.svg" alt="" className="image-behind-list2" />
+          <img src="/chakra3.svg" alt="" className="image-behind-list3" />
           <h1 className="fourth-focus-component">OUR OBJECTIVES</h1>
           <div className="list-of-work">
             <ul>
@@ -114,6 +117,7 @@ const About = () => {
             </ul>
           </div>
         </section>
+
 
         {/* fourth and last page start here */}
 
