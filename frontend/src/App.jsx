@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
@@ -9,10 +9,14 @@ import Donate from "./Pages/Donate";
 import Membership from "./Pages/Membership";
 import Event from "./Pages/Event";
 import Gallery from "./Pages/Gallery";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, [location]);
 
   return (
     <Fragment>
