@@ -97,10 +97,10 @@
   .nav-links.active {
     display: block;
     position: fixed;
-    top: 12%;
+    top: 0.1%;
     right: 0;
     height: 100%;
-    width: 80%;
+    width: 100%;
     background-color: whitesmoke;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
     flex-direction: column;
@@ -123,11 +123,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 5rem;
   }
 
   .hamburger-menu {
     display: block;
+    z-index: 999;
   }
 }
