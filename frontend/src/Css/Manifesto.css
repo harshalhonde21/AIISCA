@@ -1,142 +1,71 @@
-/* Define the font import */
-@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-.outer-about-main-component {
-  margin-top: 5.5rem; 
-  height: 100vh;
-}
-
-.front-page-component {
+.manifesto-page-component {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin-top: 6rem;
 }
 
-.para-with-name-container {
+.manifesto-with-name-container {
   margin: 5.5rem;
-  flex: 1; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.para-with-name-container p {
+.manifesto-with-name-container p {
   font-family: "Montagu Slab";
   color: #1e31d6;
   font-weight: bold;
-  font-size: 1.8rem; 
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: justify;
   margin-top: 5.5rem;
 }
 
-.para-with-name-container h3 {
-  font-family: "Montagu Slab";
-  color: #9102b5;
-  font-weight: bold;
-  font-size: 1.6rem; 
+.image-manifesto-component img {
+  width: 22rem;
+  margin-top: 2rem;
 }
 
-@media screen and (max-width: 950px) {
-  .outer-about-main-component {
-    margin-top: 2rem; 
-  }
+.manifesto-btn {
+  background-color: #1e31d6;
+  padding: 1rem 5rem;
+  border: none;
+  border-radius: 15px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #ffffff;
+}
 
-  .para-with-name-container {
+@media screen and (max-width: 750px) {
+  .manifesto-with-name-container {
     margin: 1rem;
   }
 
-  .para-with-name-container p {
-    font-size: 1.4rem; 
+  .manifesto-with-name-container p {
+    font-size: 1.4rem;
   }
 
-  .para-with-name-container h3 {
-    font-size: 1.2rem; 
+  .manifesto-with-name-container h3 {
+    font-size: 1.2rem;
   }
 
-  .image-about-component img{
+  .image-manifesto-component img {
     width: 15rem;
     margin-left: 2rem;
     border-radius: 35px;
   }
-.front-page-component{
-  flex-direction: column;
-}
-}
-
-
-/* third page start here */
-
-/* Base styles */
-.third-page-container{
-  width: 100%;
-  height: auto;
-  background-color: #1e31d6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.third-focus-component {
-  font-family: "Saira Stencil One", sans-serif;
-  color: white;
-  font-size: 5rem;
-  line-height: 1.4;
-  font-weight: 100;
-  text-align: center;
-  padding-top: 1.5rem;
-  position: relative;
-}
-
-.third-focus-component::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: gold;
-}
-
-.head-para-combine-component {
-  width: 80rem;
-  margin-top: 3rem;
-}
-
-.heading-combine {
-  font-family: "Montserrat", sans-serif;
-  color: #ffffff;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.para-combine {
-  font-family: "Poppins", sans-serif;
-  color: #ffffff;
-  margin-bottom: 3rem;
-  text-align: justify;
-}
-
-/* Responsive styles */
-@media (max-width: 1300px) {
-  .head-para-combine-component {
-    width: 80%;
-    max-width: 40rem;
-    margin-top: 2rem;
-  }
-
-  .third-focus-component{
-    font-size: 2.5rem;
+  .manifesto-page-component {
+    flex-direction: column;
   }
 }
 
-
-/* fourth page */
-
-/* fourth page */
 .fourth-page-container {
   position: relative; /* Ensure relative positioning */
   width: 100%;
@@ -184,6 +113,8 @@
   margin-bottom: 1.8rem;
   text-align: justify;
   position: relative; /* Ensure relative positioning */
+  list-style: none;
+  word-spacing: 1.5rem;
 }
 
 .list-of-work ul {
@@ -193,6 +124,7 @@
 .list-of-work ul li::marker {
   color: #1e31d6;
 }
+
 
 .image-behind-list {
   position: absolute;
@@ -206,7 +138,7 @@
 .image-behind-list2 {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   width: 20rem;
   z-index: -1; 
@@ -264,7 +196,8 @@
     top: 5%;
     right: -30%;
     width: 15rem;
-    display: none;
   }
 }
+
+
 

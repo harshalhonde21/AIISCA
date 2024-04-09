@@ -160,4 +160,19 @@ ul li {
     margin-bottom: 10px;
   }
 
+  .footer-para {
+    width: 250px;
+    font-family: "Montserrat";
+  }
+
+}
+
+@media screen and (max-width: 281px) {
+
+
+  .footer-para {
+    width: 200px;
+    font-family: "Montserrat";
+  }
+
 }

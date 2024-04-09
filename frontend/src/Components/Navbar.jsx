@@ -19,28 +19,34 @@ const Navbar = ({ location }) => {
         <div className={`nav-links ${isOpen ? "active" : ""}`}>
           <ul>
             <li className={location.pathname === "/" ? "active" : ""}>
-              <Link to="/">Home</Link>
+              <Link onClick={toggleMenu} to="/">Home</Link>
             </li>
             <li className={location.pathname === "/about" ? "active" : ""}>
-              <Link to="/about">About Us</Link>
+              <Link onClick={toggleMenu} to="/about">About Us</Link>
+            </li>
+            <li className={location.pathname === "/manifesto" ? "active" : ""}>
+              <Link onClick={toggleMenu} to="/manifesto">AIISCA Manifesto</Link>
+            </li>
+            <li className={location.pathname === "/demands" ? "active" : ""}>
+              <Link onClick={toggleMenu} to="/demands">AIISCA Demands</Link>
             </li>
             <li className={location.pathname === "/event" ? "active" : ""}>
-              <Link to="/event">Event</Link>
+              <Link onClick={toggleMenu} to="/event">Event</Link>
             </li>
             <li className={location.pathname === "/gallery" ? "active" : ""}>
-              <Link to="/gallery">Gallery</Link>
+              <Link onClick={toggleMenu} to="/gallery">Gallery</Link>
             </li>
             <li className={location.pathname === "/contact" ? "active" : ""}>
-              <Link to="/contact">Contact Us</Link>
+              <Link onClick={toggleMenu} to="/contact">Contact Us</Link>
             </li>
             <li className={location.pathname === "/membership" ? "active" : ""}>
-              <Link to="/membership">Membership</Link>
+              <Link onClick={toggleMenu} to="/membership">Membership</Link>
             </li>
             <li className={location.pathname === "/blog" ? "active" : ""}>
-              <Link to="/blog">Blog</Link>
+              <Link onClick={toggleMenu} to="/blog">Blog</Link>
             </li>
             <li className={location.pathname === "/donate" ? "active" : ""}>
-              <Link to="/donate">Donate Us</Link>
+              <Link onClick={toggleMenu} to="/donate">Donate Us</Link>
             </li>
           </ul>
         </div>

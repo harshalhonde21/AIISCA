@@ -10,6 +10,8 @@ import Membership from "./Pages/Membership";
 import Event from "./Pages/Event";
 import Gallery from "./Pages/Gallery";
 import "./App.css";
+import Manifesto from "./Pages/Manifesto";
+import Demands from "./Pages/Demands";
 
 const App = () => {
   const location = useLocation();
@@ -24,6 +26,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/manifesto" element={<Manifesto />} />
+        <Route path="/demands" element={<Demands />} />
         <Route path="/event" element={<Event />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
