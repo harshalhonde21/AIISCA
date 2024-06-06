@@ -2,10 +2,12 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation();
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -19,13 +21,13 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <Link to="/" className="logo-link" onClick={closeSidebar}>
+          <Link to="/addblog" className="logo-link" onClick={closeSidebar}>
             <img src="/images/Logo.png" alt="Logo" />
           </Link>
         </div>
         <div className="navbar-items">
           <NavLink
-            to="/"
+            to="/addblog"
             className="navbar-item"
             style={{
               borderBottom:
@@ -59,8 +61,8 @@ const Navbar = () => {
           >
             Add Image
           </NavLink>
-          <NavLink
-            to="/about"
+          {isAuthenticated && (<NavLink
+            to="/profile"
             className="navbar-item"
             style={{
               borderBottom:
@@ -68,8 +70,8 @@ const Navbar = () => {
             }}
             onClick={closeSidebar}
           >
-            Schedule
-          </NavLink>
+            Profile
+          </NavLink>)}
         </div>
         <div className="navbar-icon" onClick={toggleSidebar}>
           {showSidebar ? <FaTimes /> : <FaBars />}
@@ -78,7 +80,7 @@ const Navbar = () => {
       {showSidebar && (
         <div className="sidebar">
           <div className="sidebar-items">
-            <NavLink to="/" className="sidebar-item" onClick={closeSidebar}>
+            <NavLink to="/addblog" className="sidebar-item" onClick={closeSidebar}>
               Add Blog
             </NavLink>
             <NavLink
@@ -95,13 +97,13 @@ const Navbar = () => {
             >
               Add Image
             </NavLink>
-            <NavLink
-              to="/about"
+            {isAuthenticated && (<NavLink
+              to="/profile"
               className="sidebar-item"
               onClick={closeSidebar}
             >
-              About
-            </NavLink>
+              Profile
+            </NavLink>)}
           </div>
         </div>
       )}
