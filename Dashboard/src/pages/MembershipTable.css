@@ -1,0 +1,102 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* MembershipTable styles */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 20px; /* Center the container */
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Maximum width for large screens */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.print-button, .export-button {
+    padding: 10px 20px;
+    margin: 5px 0; /* Adjusted for vertical alignment */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.export-button{
+    width: 150px;
+    margin-top: 15px;
+}
+
+.print-button:hover, .export-button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.table-wrapper {
+    width: 100%;
+    text-align: center; /* Center the table */
+}
+
+.table {
+    width: 100%;
+    max-width: 100%; /* Ensure table doesn't overflow its container */
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #2e5aea;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto; 
+    }
+
+    .button-container {
+        align-items: center; 
+    }
+
+    .export-button {
+        width: 100%; 
+    }
+
+    .print-button {
+        width: 80px; 
+    }
+}

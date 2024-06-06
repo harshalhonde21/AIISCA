@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import AddBlogForm from "./pages/AddBlogForm";
 import AddEventForm from "./pages/AddEventForm";
 import AddImage from "./pages/AddImage";
+import ContactTable from "./pages/ContactTable";
+import MembershipTable from "./pages/MembershipTable";
 import Login from "./pages/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { isLogin } from "./actions/userAction";
@@ -53,6 +55,14 @@ function App() {
           path="/addimage"
           element={isAuthenticated ? <AddImage /> : <Navigate to="/" />}
         />
+        <Route 
+          path="/contacttable" 
+          element={isAuthenticated ? <ContactTable /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/membershiptable"
+          element={isAuthenticated ? <MembershipTable /> : <Navigate to="/" />}
+        />          
       </Routes>
     </>
   );

@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 20px; 
+    width: 90%; 
+    max-width: 1200px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.print-button, .export-button {
+    padding: 10px 20px;
+    margin: 5px 0; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     
+}
+
+.export-button{
+    margin-top: 15px;
+    width: 150px;
+}
+
+.print-button:hover, .export-button:hover {
+    background-color: #0056b3;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; 
+    text-align: center; 
+}
+
+.table {
+    width: 100%;
+    max-width: 100%; 
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #3555e8;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .table {
+        width: 100%;
+    }
+
+    .button-container {
+        align-items: center; 
+    }
+
+    .print-button {
+        width: 80px; 
+    }
+
+    .export-button {
+        width: 100px; 
+    }
+}
