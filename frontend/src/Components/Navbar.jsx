@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import PropTypes from "prop-types"; 
 import "./Navbar.css";
 
 const Navbar = ({ location }) => {
@@ -45,9 +46,6 @@ const Navbar = ({ location }) => {
             <li className={location.pathname === "/blog" ? "active" : ""}>
               <Link onClick={toggleMenu} to="/blog">Blog</Link>
             </li>
-            <li className={location.pathname === "/donate" ? "active" : ""}>
-              <Link onClick={toggleMenu} to="/donate">Donate Us</Link>
-            </li>
           </ul>
         </div>
         <div className="hamburger-menu" onClick={toggleMenu}>
@@ -56,6 +54,12 @@ const Navbar = ({ location }) => {
       </nav>
     </Fragment>
   );
+};
+
+Navbar.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Navbar;

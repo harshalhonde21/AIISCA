@@ -7,10 +7,33 @@
   font-family: "Poppins", sans-serif;
 }
 
+.contact-heading {
+  margin-top: 8rem;
+}
+
+.contact-heading h1 {
+  color: #1e31d6;
+  font-size: 5rem;
+  font-family: "Saira Stencil One", sans-serif;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-heading h1::after {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 5px;
+  background-color: #ffd700;
+  margin: 5px auto 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .contact-form-container {
-  margin-top: 5.5rem;
   position: relative;
-  background-image: url('/Contact-bg.jpg');
+  background-image: url("/Contact-bg.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px;
@@ -23,11 +46,13 @@
 }
 
 .contact-form-container h1 {
-  font-size: 4em;
+  font-size: 5em;
   margin-bottom: 20px;
   text-align: left;
-  line-height: 60px;
+  line-height: 80px;
   color: #ffffff;
+  font-family: "Poppins";
+  font-weight: 800;
 }
 
 .contact-form {
@@ -44,7 +69,7 @@
 
 .form-row {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .contact-form input,
@@ -78,11 +103,11 @@ textarea::placeholder {
 }
 
 .contact-form .submit-button {
- width: 150px;
+  width: 150px;
   max-width: 300px;
   padding: 10px;
   background-color: #007bff;
-  color: #EFD703;
+  color: #efd703;
   font-weight: bold;
   border: none;
   border-radius: 5px;
@@ -91,13 +116,11 @@ textarea::placeholder {
 }
 
 .contact-form button:hover {
-  background-color: #EFD703;
+  background-color: #efd703;
   color: #007bff;
 }
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 996px) {
   .contact-form-container {
     flex-direction: column;
     padding: 50px;
@@ -114,6 +137,10 @@ textarea::placeholder {
 
   .contact-form {
     max-width: 100%;
+  }
+
+  .contact-heading h1 {
+    font-size: 4rem;
   }
 }
 
@@ -133,5 +160,14 @@ textarea::placeholder {
 
   .contact-form .submit-button {
     width: 100%;
+  }
+
+  .contact-heading h1 {
+    font-size: 3rem;
+  }
+
+  .contact-heading h1::after {
+    content: "";
+    width: 200px;
   }
 }

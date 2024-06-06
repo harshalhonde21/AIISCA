@@ -75,6 +75,71 @@
   }
   
 
+  .child-event-container {
+    height: auto;
+    background-color: whitesmoke;
+    display: flex;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+  }
+  
+  .event-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .event-image-container img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+  }
+  
+  .event-info-container {
+    flex-grow: 1;
+    margin-left: 20px;
+    padding: 15px;
+  }
+  
+  .event-info-time-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .time-box {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+  }
+  
+  .time-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .time-value {
+    font-size: 14px;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .remaining-text {
+    font-size: 14px;
+    color: #666;
+  }
+
   
   @media (max-width: 768px) {
     .events-container h1 {

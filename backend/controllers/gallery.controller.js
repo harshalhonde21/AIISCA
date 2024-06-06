@@ -3,7 +3,7 @@ import cloudinary from '../config/cloudinary.js';
 
 export const uploadImage = async (req, res) => {
     try {
-        const { imageName, date, month, city } = req.body;
+        const { imageName, date, year, city } = req.body;
         const file = req.file;
 
         if (!file) {
@@ -19,7 +19,7 @@ export const uploadImage = async (req, res) => {
             imageUrl: result.secure_url,
             imageName,
             date,
-            month,
+            year,
             city
         });
 

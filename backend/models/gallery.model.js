@@ -10,11 +10,11 @@ const imageSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: Number,
+    type: String,
     required: true,
   },
-  month: {
-    type: Number,
+  year: {
+    type: String,
     required: true,
   },
   city:{

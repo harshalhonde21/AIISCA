@@ -5,7 +5,6 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
 import Contact from "./Pages/Contact";
-import Donate from "./Pages/Donate";
 import Membership from "./Pages/Membership";
 import Event from "./Pages/Event";
 import Gallery from "./Pages/Gallery";
@@ -33,7 +32,6 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/donate" element={<Donate />} />
       </Routes>
       
     </Fragment>

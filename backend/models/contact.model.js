@@ -39,6 +39,11 @@ const contactSchema = new mongoose.Schema({
             message: "Phone number must be exactly 10 digits",
         },
     },
+
+    message:{
+        type:String,
+        required:[true, "enter some message"]
+    },
     createdAt: {
         type: Date,
         default: Date.now,

@@ -2,9 +2,9 @@ import Contact from '../models/contact.model.js';
 
 export const createContact = async (req, res) => {
   try {
-    const { firstName, lastName, email, phoneNumber } = req.body;
+    const { firstName, lastName, email, phoneNumber, message } = req.body;
 
-    if ([firstName, lastName, email, phoneNumber].some((field) => field?.trim() === "")) {
+    if ([firstName, lastName, email, phoneNumber, message].some((field) => field?.trim() === "")) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -14,7 +14,7 @@ export const createContact = async (req, res) => {
     //   return res.status(400).json({ message: "Contact with this email already exists" });
     // }
 
-    const newContact = new Contact({ firstName, lastName, email, phoneNumber });
+    const newContact = new Contact({ firstName, lastName, email, phoneNumber, message });
 
     await newContact.save();
 
