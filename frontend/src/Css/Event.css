@@ -1,0 +1,94 @@
+/* Define the font import */
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+  .events-container {
+    margin-top: 5.5rem;
+    padding: 20px;
+    text-align: center;
+    background-image: url('/Events-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  .events-container h1 {
+    font-family: "Saira Stencil One", sans-serif;
+    font-weight: 100;
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .events-container h1::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 5px;
+    background-color: #FFD700;
+    margin: 10px auto 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .upcoming-event,
+  .previous-events {
+    margin-bottom: 40px;
+  }
+  
+  .event-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: left;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .event-item h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .event-item p {
+    font-size: 1em;
+  }
+  
+  .previous-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+
+  
+  @media (max-width: 768px) {
+    .events-container h1 {
+      font-size: 3em;
+    }
+  
+    .previous-events-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .events-container h1 {
+      font-size: 2em;
+    }
+  }
+  
