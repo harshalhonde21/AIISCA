@@ -26,5 +26,5 @@ const newUser = new mongoose.Schema({
 })
 
 
-const User = mongoose.model("AsUser", newUser)
+const User = mongoose.model("ASCIIuser", newUser)
 export default User;
