@@ -1,73 +1,72 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.outer-about-main-component {
+  margin-top: 5.5rem;
+  height: 100vh;
+}
+
+.front-page-component {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.para-with-name-container {
+  margin: 5.5rem;
+  flex: 1;
+}
+
+.para-with-name-container p {
+  font-family: "Montagu Slab";
+  color: #1e31d6;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  margin-top: 5.5rem;
+}
+
+.para-with-name-container h3 {
+  font-family: "Montagu Slab";
+  color: #9102b5;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.image-about-component img {
+  width: 90%;
+  height: 80%;
+  margin-top: 2rem;
+  margin-right: -80px;
+  border-radius: 125px;
+}
+
+@media screen and (max-width: 950px) {
   .outer-about-main-component {
-    margin-top: 5.5rem; 
-    height: 100vh;
-  }
-  
-  .front-page-component {
-    display: flex;
-    flex-wrap: wrap; 
-  }
-  
-  .para-with-name-container {
-    margin: 5.5rem;
-    flex: 1; 
-  }
-  
-  .para-with-name-container p {
-    font-family: "Montagu Slab";
-    color: #1e31d6;
-    font-weight: bold;
-    font-size: 1.8rem; 
-    margin-bottom: 1.5rem;
-    text-align: justify;
-    margin-top: 5.5rem;
-  }
-  
-  .para-with-name-container h3 {
-    font-family: "Montagu Slab";
-    color: #9102b5;
-    font-weight: bold;
-    font-size: 1.6rem; 
+    margin-top: 2rem;
   }
 
-  .image-about-component img{
-    width: 90%;
-    height: 80%;
-    margin-top: 2rem;
-    margin-right: -80px;
-    border-radius: 125px;
+  .para-with-name-container {
+    margin: 1rem;
   }
-  
-  @media screen and (max-width: 950px) {
-    .outer-about-main-component {
-      margin-top: 2rem; 
-    }
-  
-    .para-with-name-container {
-      margin: 1rem;
-    }
-  
-    .para-with-name-container p {
-      font-size: 1.4rem; 
-    }
-  
-    .para-with-name-container h3 {
-      font-size: 1.2rem; 
-    }
-  
-    .image-about-component img{
-      width: 15rem;
-      margin-left: 2rem;
-      border-radius: 35px;
-    }
-  .front-page-component{
+
+  .para-with-name-container p {
+    font-size: 1.4rem;
+  }
+
+  .para-with-name-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .image-about-component img {
+    width: 15rem;
+    margin-left: 2rem;
+    border-radius: 35px;
+  }
+  .front-page-component {
     flex-direction: column;
   }
-  }
+}

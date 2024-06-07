@@ -10,10 +10,19 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 import userRouter from "./routes/auth.route.js";
+import contactRouter from "./routes/contact.route.js";
+import memberRouter from "./routes/member.route.js";
+import GalleryRouter from "./routes/gallery.route.js";
+import EventRouter from "./routes/event.route.js";
 
 app.use("/api/v1/user", userRouter);
+app.use("/api/v2/contact", contactRouter);
+app.use("/api/v3/member", memberRouter);
+app.use("/api/v4/gallery", GalleryRouter);
+app.use("/api/v5/event", EventRouter);
 
 const port = process.env.PORT;
 
