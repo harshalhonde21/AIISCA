@@ -11,6 +11,7 @@ import Gallery from "./Pages/Gallery";
 import "./App.css";
 import Manifesto from "./Pages/Manifesto";
 import Demands from "./Pages/Demands";
+import ParticularEvent from "./Pages/ParticularEvent";
 
 const App = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/parEvent" element={<ParticularEvent />} />
       </Routes>
       
     </Fragment>

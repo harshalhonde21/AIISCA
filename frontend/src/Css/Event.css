@@ -6,154 +6,222 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
-  .events-container {
-    margin-top: 5.5rem;
-    padding: 20px;
-    text-align: center;
-    background-image: url('/Events-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-  }
-  
+
+.events-container {
+  margin-top: 5.5rem;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  background-color: #1e31d6;
+}
+
+.events-container h1 {
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 100;
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.events-container h1::after {
+  content: '';
+  display: block;
+  width: 400px;
+  height: 5px;
+  background-color: #FFD700;
+  margin: 4px auto 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.upcoming-event,
+.previous-events {
+  margin-bottom: 80px;
+}
+
+.event-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: left;
+  color: black; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.event-item h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.event-item p {
+  font-size: 1em;
+}
+
+.previous-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6rem;
+  margin: 0 4rem;
+}
+
+.child-event-container {
+  height: auto;
+  background-color: whitesmoke;
+  display: flex;
+  text-align: left;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+  margin: 3rem 12rem;
+}
+
+.event-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image-container img {
+  max-width: 100%;
+  width: 500px; /* Adjusted width */
+  height: auto;
+  border-radius: 2rem;
+}
+
+.event-description-container {
+  margin-top: 20px;
+  flex: 1;
+}
+
+.event-description-container h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.event-description-container p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.event-description-container button {
+  padding: 10px 20px;
+  color: #1e31d6;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: transparent; /* Fixed background color */
+  font-weight: bold;
+  border: 1px solid #1e31d6;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
   .events-container h1 {
-    font-family: "Saira Stencil One", sans-serif;
-    font-weight: 100;
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #ffffff;
-    position: relative;
-    display: inline-block;
+    font-size: 3em;
   }
-  
+
+  .previous-events-grid {
+    grid-template-columns: 1fr;
+    margin: 0 2rem; /* Adjusted margin */
+  }
+
+  .child-event-container {
+    flex-direction: column;
+    margin: 0 2rem; /* Adjusted margin */
+  }
+
+  .event-image-container img {
+    width: 100%; /* Ensure image fits container */
+  }
+
+  .event-description-container {
+    margin-top: 10px;
+    width: 100%; /* Occupy full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .events-container h1 {
+    font-size: 2em;
+  }
+
+  .child-event-container {
+    margin: 0 1rem; /* Adjusted margin */
+  }
+
+  .time-box {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+  }
+
+  .time-label {
+    font-size: 5px;
+  }
+
+  .time-value {
+    font-size: 12px;
+  }
+
+  .event-description-container {
+    margin-top: 10px;
+    margin-left: -2rem;
+    padding: 0;
+  }
+
+  .event-description-container h2 {
+    font-size: 16px;
+  }
+
+  .event-description-container p {
+    font-size: 12px;
+    width: 12rem;
+
+  }
+
+  .event-description-container button {
+    font-size: 14px;
+  }
+
+  .event-info-time-container {
+    margin-left: -2rem;
+    gap: 5px;
+  }
+
   .events-container h1::after {
-    content: '';
-    display: block;
-    width: 250px;
+    width: 200px;
     height: 5px;
     background-color: #FFD700;
-    margin: 10px auto 0;
+    margin: 4px auto 0;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
-  
-  .upcoming-event,
-  .previous-events {
-    margin-bottom: 40px;
-  }
-  
-  .event-item {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    text-align: left;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .event-item img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .event-item h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
-  }
-  
-  .event-item p {
-    font-size: 1em;
-  }
-  
-  .previous-events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
+}
 
+@media (max-width: 1464px) {
   .child-event-container {
-    height: auto;
-    background-color: whitesmoke;
-    display: flex;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
-  }
-  
-  .event-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .event-image-container img {
-    max-width: 100%;
-    width: 500px;
-    height: auto;
-  }
-  
-  .event-info-container {
-    flex-grow: 1;
-    margin-left: 20px;
-    padding: 15px;
-  }
-  
-  .event-info-time-container {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    margin-bottom: 15px;
-  }
-  
-  .time-box {
-    width: 50px;
-    height: 50px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 28px;
-  }
-  
-  .time-label {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 5px;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .time-value {
-    font-size: 14px;
-    color: #333;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .remaining-text {
-    font-size: 14px;
-    color: #666;
+    margin: 0 2rem; /* Adjusted margin */
   }
 
-  
-  @media (max-width: 768px) {
-    .events-container h1 {
-      font-size: 3em;
-    }
-  
-    .previous-events-grid {
-      grid-template-columns: 1fr;
-    }
+  .event-image-container img {
+    width: 100%; /* Ensure image fits container */
   }
-  
-  @media (max-width: 480px) {
-    .events-container h1 {
-      font-size: 2em;
-    }
-  }
-  
+}

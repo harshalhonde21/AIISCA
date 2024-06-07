@@ -87,8 +87,7 @@ const Events = () => {
                   <h2>{upcomingEvent.title}</h2>
                   <p>{upcomingEvent.description}</p>
                   <p><strong>Date:</strong> {new Date(upcomingEvent.date).toLocaleDateString()}</p>
-                  <p><strong>Time:</strong> {new Date(upcomingEvent.date).toLocaleTimeString()}</p>
-                  <button>Join With Us</button>
+                  <button>Read More</button>
                 </div>
               </div>
             </div>
@@ -103,7 +102,6 @@ const Events = () => {
             <div key={event._id} className="previous-event event-item">
               <img src={event.imageUrl} alt={event.title} />
               <h2>{event.title}</h2>
-              <p>{event.description}</p>
               <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
             </div>
           ))}
