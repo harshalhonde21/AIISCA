@@ -11,8 +11,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 100px auto 20px; /* Center the container */
-    width: 90%; /* Adjust width as needed */
-    max-width: 1200px; /* Maximum width for large screens */
+    width: 100%; /* Adjust width as needed */
+    max-width: 1200px; 
 }
 
 .button-container {
@@ -46,12 +46,13 @@ body {
 
 .table-wrapper {
     width: 100%;
-    text-align: center; /* Center the table */
+    text-align: center; 
+    border: 2px solid red;
 }
 
 .table {
     width: 100%;
-    max-width: 100%; /* Ensure table doesn't overflow its container */
+    max-width: 100%; 
     border-collapse: collapse;
     margin-top: 20px;
     margin-left: auto;

@@ -1,26 +1,30 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { useTable } from 'react-table';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
+import axios from 'axios';
 import '../pages/ContactTable.css';
 
 const ContactTable = () => {
-  // Mock data
-  const data = useMemo(() => [
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      phone: '123-456-7890',
-      message: 'Hello!',
-    },
-    {
-      firstName: 'Jane',
-      lastName: 'Smith',
-      email: 'jane.smith@example.com',
-      phone: '098-765-4321',
-      message: 'Hi there!',
-    },
-  ], []);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5500/api/v2/contact/get-contacts')
+      .then(response => {
+        const contacts = response.data.contacts.map(contact => ({
+          id: contact._id, // Add an id field here
+          firstName: contact.firstName,
+          lastName: contact.lastName,
+          email: contact.email,
+          phone: contact.phoneNumber,
+          message: contact.message,
+          createdAt: new Date(contact.createdAt).toLocaleDateString(),
+        }));
+        setData(contacts);
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      });
+  }, []);
 
   const columns = useMemo(
     () => [
@@ -101,21 +105,21 @@ const ContactTable = () => {
         <div ref={tableRef}>
           <table {...getTableProps()} className="table">
             <thead>
-              {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              {headerGroups.map((headerGroup, index) => (
+                <tr {...headerGroup.getHeaderGroupProps()} key={index}>
+                  {headerGroup.headers.map((column, colIndex) => (
+                    <th {...column.getHeaderProps()} key={colIndex}>{column.render('Header')}</th>
                   ))}
                 </tr>
               ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-              {rows.map(row => {
+              {rows.map((row, rowIndex) => {
                 prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()}>
-                    {row.cells.map(cell => (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  <tr {...row.getRowProps()} key={rowIndex}>
+                    {row.cells.map((cell, cellIndex) => (
+                      <td {...cell.getCellProps()} key={cellIndex}>{cell.render('Cell')}</td>
                     ))}
                   </tr>
                 );

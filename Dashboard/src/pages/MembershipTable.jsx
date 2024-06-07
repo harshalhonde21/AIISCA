@@ -1,48 +1,45 @@
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { useTable } from 'react-table';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
+import axios from 'axios';
 import '../pages/MembershipTable.css';
 
 const MembershipTable = () => {
-  // Mock data
-  const data = useMemo(() => [
-    {
-      firstName: 'John',
-      gender: 'Male',
-      dateOfBirth: '01/01/1980',
-      category: 'General',
-      caste: 'Doe',
-      email: 'john.doe@example.com',
-      contactNumber: '123-456-7890',
-      permanentAddress: '123 Main St',
-      city: 'Cityville',
-      state: 'Stateville',
-      pincode: '123456',
-      highestQualification: 'PhD',
-      occupation: 'Engineer',
-      currentAddress: '456 Elm St',
-    },
-    {
-      firstName: 'Jane',
-      gender: 'Female',
-      dateOfBirth: '02/02/1990',
-      category: 'OBC',
-      caste: 'Smith',
-      email: 'jane.smith@example.com',
-      contactNumber: '098-765-4321',
-      permanentAddress: '789 Oak St',
-      city: 'Townsville',
-      state: 'Regionville',
-      pincode: '654321',
-      highestQualification: 'Masters',
-      occupation: 'Doctor',
-      currentAddress: '101 Pine St',
-    },
-  ], []);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5500/api/v3/member/get-member')
+      .then(response => {
+        const members = response.data.members.map(member => ({
+          fullName: member.fullName,
+          gender: member.gender,
+          dateOfBirth: new Date(member.dateOfBirth).toLocaleDateString(),
+          category: member.category,
+          caste: member.caste,
+          email: member.email,
+          contactNumber: member.contactNumber,
+          permanentAddress: member.permanentAddress,
+          permanentCity: member.permanentCity,
+          permanentState: member.permanentState,
+          permanentPincode: member.permanentPincode,
+          highestQualification: member.highestQualification,
+          occupation: member.occupation,
+          currentAddress: member.currentAddress,
+          currentCity: member.currentCity,
+          currentState: member.currentState,
+          currentPincode: member.currentPincode,
+          membershipId: member.membershipId
+        }));
+        setData(members);
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      });
+  }, []);
 
   const columns = useMemo(
     () => [
-      { Header: 'First Name', accessor: 'firstName' },
+      { Header: 'Full Name', accessor: 'fullName' },
       { Header: 'Gender', accessor: 'gender' },
       { Header: 'Date of Birth', accessor: 'dateOfBirth' },
       { Header: 'Category', accessor: 'category' },
@@ -50,12 +47,16 @@ const MembershipTable = () => {
       { Header: 'Email Address', accessor: 'email' },
       { Header: 'Contact Number', accessor: 'contactNumber' },
       { Header: 'Permanent Address', accessor: 'permanentAddress' },
-      { Header: 'City', accessor: 'city' },
-      { Header: 'State', accessor: 'state' },
-      { Header: 'Pincode', accessor: 'pincode' },
+      { Header: 'Permanent City', accessor: 'permanentCity' },
+      { Header: 'Permanent State', accessor: 'permanentState' },
+      { Header: 'Permanent Pincode', accessor: 'permanentPincode' },
       { Header: 'Highest Qualification', accessor: 'highestQualification' },
       { Header: 'Occupation', accessor: 'occupation' },
       { Header: 'Current Address', accessor: 'currentAddress' },
+      { Header: 'Current City', accessor: 'currentCity' },
+      { Header: 'Current State', accessor: 'currentState' },
+      { Header: 'Current Pincode', accessor: 'currentPincode' },
+      { Header: 'Membership ID', accessor: 'membershipId' }
     ],
     []
   );
@@ -132,21 +133,21 @@ const MembershipTable = () => {
         <div ref={tableRef}>
           <table {...getTableProps()} className="table">
             <thead>
-              {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              {headerGroups.map((headerGroup, index) => (
+                <tr {...headerGroup.getHeaderGroupProps()} key={index}>
+                  {headerGroup.headers.map((column, colIndex) => (
+                    <th {...column.getHeaderProps()} key={colIndex}>{column.render('Header')}</th>
                   ))}
                 </tr>
               ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-              {rows.map(row => {
+              {rows.map((row, rowIndex) => {
                 prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()}>
-                    {row.cells.map(cell => (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  <tr {...row.getRowProps()} key={rowIndex}>
+                    {row.cells.map((cell, cellIndex) => (
+                      <td {...cell.getCellProps()} key={cellIndex}>{cell.render('Cell')}</td>
                     ))}
                   </tr>
                 );
