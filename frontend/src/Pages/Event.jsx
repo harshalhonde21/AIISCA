@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../Css/Event.css';
 import Footer from '../Components/Footer';
@@ -7,6 +8,7 @@ const Events = () => {
   const [upcomingEvent, setUpcomingEvent] = useState(null);
   const [previousEvents, setPreviousEvents] = useState([]);
   const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchEvents();
@@ -55,47 +57,50 @@ const Events = () => {
 
   const formatTime = value => (value < 10 ? `0${value}` : value);
 
+  const handleReadMore = (event) => {
+    navigate(`/event/${event._id}`, { state: { event } });
+  };
+
   return (
     <>
       <div className="events-container">
         <h1>Upcoming Events</h1>
         {upcomingEvent ? (
-            <div className="child-event-container">
-              <div className="event-image-container">
-                <img src={upcomingEvent.imageUrl} alt={upcomingEvent.title} />
+          <div className="child-event-container">
+            <div className="event-image-container">
+              <img src={upcomingEvent.imageUrl} alt={upcomingEvent.title} />
+            </div>
+            <div className="event-info-container">
+              <div className="event-info-time-container">
+                <div className="time-box">
+                  <span className="time-label">Days</span>
+                  <span className="time-value">{formatTime(remainingTime.days)}</span>
+                </div>
+                <div className="time-box">
+                  <span className="time-label">Hours</span>
+                  <span className="time-value">{formatTime(remainingTime.hours)}</span>
+                </div>
+                <div className="time-box">
+                  <span className="time-label">Minutes</span>
+                  <span className="time-value">{formatTime(remainingTime.minutes)}</span>
+                </div>
+                <div className="time-box">
+                  <span className="time-label">Seconds</span>
+                  <span className="time-value">{formatTime(remainingTime.seconds)}</span>
+                </div>
               </div>
-              <div className="event-info-container">
-                <div className="event-info-time-container">
-                  <div className="time-box">
-                    <span className="time-label">Days</span>
-                    <span className="time-value">{formatTime(remainingTime.days)}</span>
-                  </div>
-                  <div className="time-box">
-                    <span className="time-label">Hours</span>
-                    <span className="time-value">{formatTime(remainingTime.hours)}</span>
-                  </div>
-                  <div className="time-box">
-                    <span className="time-label">Minutes</span>
-                    <span className="time-value">{formatTime(remainingTime.minutes)}</span>
-                  </div>
-                  <div className="time-box">
-                    <span className="time-label">Seconds</span>
-                    <span className="time-value">{formatTime(remainingTime.seconds)}</span>
-                  </div>
-                </div>
-                <div className="event-description-container">
-                  <h2>{upcomingEvent.title}</h2>
-                  <p>{upcomingEvent.description}</p>
-                  <p><strong>Date:</strong> {new Date(upcomingEvent.date).toLocaleDateString()}</p>
-                  <button>Read More</button>
-                </div>
+              <div className="event-description-container">
+                <h2>{upcomingEvent.title}</h2>
+                <p>{upcomingEvent.description}</p>
+                <p><strong>Date:</strong> {new Date(upcomingEvent.date).toLocaleDateString()}</p>
+                <button onClick={() => handleReadMore(upcomingEvent)}>Read More</button>
               </div>
             </div>
-          
+          </div>
         ) : (
           <p>No upcoming events</p>
         )}
-        
+
         <h1>Previous Events</h1>
         <div className="previous-events-grid">
           {previousEvents.map(event => (
@@ -103,6 +108,7 @@ const Events = () => {
               <img src={event.imageUrl} alt={event.title} />
               <h2>{event.title}</h2>
               <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
+              <button onClick={() => handleReadMore(event)} style={{padding:'5px', marginTop:"10px", borderRadius:'10px', color:'#1e31d6', border:"1px solid #1e31d6"}}>Read More</button>
             </div>
           ))}
         </div>

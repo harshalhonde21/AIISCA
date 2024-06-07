@@ -11,59 +11,75 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+
 .event-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  /* padding: 20px; */
   text-align: center;
-  color: #333;
+  color: black;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  padding: 20px;
 }
 
 .event-title {
   font-size: 2em;
   color: #1e31d6;
   margin-bottom: 20px;
-  margin-top: 70rem;
+  margin-top: 55rem; 
 }
 
 .event-banner {
   width: 100%;
   height: auto;
-  background-color: #e0e0e0;
   margin-bottom: 20px;
-  position: relative;
 }
 
 .event-banner-image {
   width: 100%;
   height: auto;
-  opacity: 0.1; /* Transparent watermark */
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 25px; 
 }
 
 .event-description {
   font-size: 1em;
-  color: #666;
+  color: black;
   margin-bottom: 20px;
-  line-height: 1.5;
+  line-height: 2;
   text-align: justify;
+  font-weight: 600;
 }
 
 .event-glimpses-title {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #1e31d6;
   margin-bottom: 10px;
 }
 
-.glimpses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+.glimpses-grids {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .glimpse-image {
-  width: 100%;
+  flex: 1 1 calc(25% - 10px);
+  max-width: calc(25% - 10px);
   height: auto;
   border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width: 640px) {
+  .event-title {
+    font-size: 1.4em;
+    color: #1e31d6;
+    margin-bottom: 20px;
+    margin-top: 45rem; 
+  }
 }

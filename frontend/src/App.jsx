@@ -33,9 +33,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/parEvent" element={<ParticularEvent />} />
+        <Route path="/event/:id" element={<ParticularEvent />} />
       </Routes>
-      
     </Fragment>
   );
 };

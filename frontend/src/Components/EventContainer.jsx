@@ -22,7 +22,7 @@ const EventContainer = () => {
     <Fragment>
       <div className="child-event-container">
         <div className="event-image-container">
-          <img src="/event.png" alt="" />
+          <img src="/baba.png" alt="" />
         </div>
         <div className="event-info-container">
           <div className="event-info-time-container">
