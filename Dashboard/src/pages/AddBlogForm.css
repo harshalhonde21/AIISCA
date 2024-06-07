@@ -1,0 +1,107 @@
+.AddBlogForm__container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 10rem auto;
+  background: url("/images/Ashoka_Chakra.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.AddBlog__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddBlog__form__heading {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.AddBlog__form__label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-family: Roboto;
+}
+
+.AddBlog__form__input[type="text"],
+.AddBlog__form__textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff58;
+}
+
+.author-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AddBlog__form__date-picker {
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 0.4rem;
+  background-color: #ffffff58;
+}
+
+.AddBlog__form__textarea {
+  height: 150px;
+}
+
+.AddBlog__form__button__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddBlog__form__button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 10rem;
+}
+
+.AddBlog__form__button:hover {
+  background-color: #218838;
+}
+
+@media screen and (max-width: 480px) {
+  .AddBlogForm__container {
+    max-width: 340px;
+  }
+
+  .author-date-container {
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .AddBlog__form__date-picker {
+    width: 100%;
+  }
+
+  .AddBlog__form__heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .AddBlogForm__container {
+    max-width: 280px;
+  }
+}

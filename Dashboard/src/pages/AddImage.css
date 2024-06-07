@@ -1,0 +1,90 @@
+.AddImage__container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 10rem auto;
+  background: url("/images/Ashoka_Chakra.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.AddImage__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddImage__form__heading {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.AddImage__form__label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.AddImage__form__input[type="text"],
+.AddImage__form__input[type="number"],
+.AddImage__form__select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff58;
+}
+
+.AddImage__form__input[type="file"] {
+  margin-bottom: 10px;
+  background-color: #ffffff58;
+}
+
+.AddImage__form__image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.AddImage__form__button__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddImage__form__submit__button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 10rem;
+}
+
+.AddImage__form__submit__button:hover {
+  background-color: #218838;
+}
+
+@media screen and (max-width: 480px) {
+    .AddImage__container {
+        max-width: 340px;
+    }
+
+    .AddImage__form__heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .AddImage__container {
+      max-width: 280px;
+    }
+  }
