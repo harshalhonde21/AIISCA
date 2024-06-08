@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import '../Css/Membership.css';
 import Footer from '../Components/Footer';
+
 const Membership = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     gender: '',
-    dob: '',
-    aadhar: '',
+    dateOfBirth: '',
+    category: '',
     caste: '',
     email: '',
     contactNumber: '',
-    address: '',
-    city: '',
-    state: '',
-    pincode: '',
-    qualification: '',
+    permanentAddress: '',
+    permanentCity: '',
+    permanentState: '',
+    permanentPincode: '',
+    highestQualification: '',
     occupation: '',
     currentAddress: '',
     currentCity: '',
     currentState: '',
     currentPincode: '',
-    agreeToTerms: false // New field for the checkbox
+    agreeToTerms: false,
   });
 
   const handleChange = (e) => {
@@ -39,8 +40,13 @@ const Membership = () => {
       return;
     }
 
+    if (formData.permanentAddress !== formData.currentAddress) {
+      alert('Permanent Address and Current Address must be the same.');
+      return;
+    }
+
     try {
-      const response = await fetch('http://143.110.182.40:5500/api/v3/member/get-member', {
+      const response = await fetch('http://localhost:5500/api/v3/member/add-member', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,25 +60,26 @@ const Membership = () => {
         setFormData({
           fullName: '',
           gender: '',
-          dob: '',
-          aadhar: '',
+          dateOfBirth: '',
+          category: '',
           caste: '',
           email: '',
           contactNumber: '',
-          address: '',
-          city: '',
-          state: '',
-          pincode: '',
-          qualification: '',
+          permanentAddress: '',
+          permanentCity: '',
+          permanentState: '',
+          permanentPincode: '',
+          highestQualification: '',
           occupation: '',
           currentAddress: '',
           currentCity: '',
           currentState: '',
           currentPincode: '',
-          agreeToTerms: false
+          agreeToTerms: false,
         });
       } else {
-        alert('Failed to submit the application. Please try again.');
+        const errorData = await response.json();
+        alert(`Failed to submit the application: ${errorData.message}`);
       }
     } catch (error) {
       console.error('Error submitting the form:', error);
@@ -82,218 +89,217 @@ const Membership = () => {
 
   return (
     <>
-    <div className="membership-form-container">
-      <h1>Membership Application Form</h1>
-      <form className="membership-form" onSubmit={handleSubmit}>
-        <div className="personal-info">
-          <h2>Personal Information:</h2>
-          <div className="form-row">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <div className="half-width">
+      <div className="membership-form-container">
+        <h1>Membership Application Form</h1>
+        <form className="membership-form" onSubmit={handleSubmit}>
+          <div className="personal-info">
+            <h2>Personal Information:</h2>
+            <div className="form-row">
               <input
                 type="text"
-                name="gender"
-                placeholder="Gender"
-                value={formData.gender}
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="half-width">
+            <div className="form-row">
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="gender"
+                  placeholder="Gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="date"
+                  name="dateOfBirth"
+                  placeholder="Date of Birth (YYYY-MM-DD)"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-row">
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="Category"
+                  value={formData.category}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="caste"
+                  placeholder="Caste"
+                  value={formData.caste}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-row">
               <input
-                type="date"
-                name="dob"
-                placeholder="Date of Birth"
-                value={formData.dob}
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
                 onChange={handleChange}
                 required
               />
             </div>
-          </div>
-          <div className="form-row">
-            <div className="half-width">
+            <div className="form-row">
               <input
-                type="text"
-                name="aadhar"
-                placeholder="Aadhar No"
-                value={formData.aadhar}
+                type="tel"
+                name="contactNumber"
+                placeholder="Contact Number"
+                value={formData.contactNumber}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="half-width">
-              <input
-                type="text"
-                name="caste"
-                placeholder="Caste"
-                value={formData.caste}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-          <div className="form-row">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <input
-              type="tel"
-              name="contactNumber"
-              placeholder="Contact Number"
-              value={formData.contactNumber}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <input
-              type="text"
-              name="address"
-              placeholder="Permanent Address"
-              value={formData.address}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <div className="half-width">
-              <input
-                type="text"
-                name="city"
-                placeholder="City"
-                value={formData.city}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="half-width">
+            <div className="form-row">
               <input
                 type="text"
-                name="state"
-                placeholder="State"
-                value={formData.state}
+                name="permanentAddress"
+                placeholder="Permanent Address"
+                value={formData.permanentAddress}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="half-width">
-              <input
-                type="text"
-                name="pincode"
-                placeholder="Pincode"
-                value={formData.pincode}
-                onChange={handleChange}
-                required
-              />
+            <div className="form-row">
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="permanentCity"
+                  placeholder="City"
+                  value={formData.permanentCity}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="permanentState"
+                  placeholder="State"
+                  value={formData.permanentState}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="permanentPincode"
+                  placeholder="Pincode"
+                  value={formData.permanentPincode}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="educational-background">
-          <h2>Educational Background:</h2>
-          <div className="form-row">
-            <input
-              type="text"
-              name="qualification"
-              placeholder="Highest Qualification"
-              value={formData.qualification}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <input
-              type="text"
-              name="occupation"
-              placeholder="Occupation"
-              value={formData.occupation}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <input
-              type="text"
-              name="currentAddress"
-              placeholder="Current Address"
-              value={formData.currentAddress}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
-            <div className="half-width">
+          <div className="educational-background">
+            <h2>Educational Background:</h2>
+            <div className="form-row">
               <input
                 type="text"
-                name="currentCity"
-                placeholder="City"
-                value={formData.currentCity}
+                name="highestQualification"
+                placeholder="Highest Qualification"
+                value={formData.highestQualification}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="half-width">
+            <div className="form-row">
               <input
                 type="text"
-                name="currentState"
-                placeholder="State"
-                value={formData.currentState}
+                name="occupation"
+                placeholder="Occupation"
+                value={formData.occupation}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="half-width">
+            <div className="form-row">
               <input
                 type="text"
-                name="currentPincode"
-                placeholder="Pincode"
-                value={formData.currentPincode}
+                name="currentAddress"
+                placeholder="Current Address"
+                value={formData.currentAddress}
                 onChange={handleChange}
                 required
               />
+            </div>
+            <div className="form-row">
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="currentCity"
+                  placeholder="City"
+                  value={formData.currentCity}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="currentState"
+                  placeholder="State"
+                  value={formData.currentState}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="currentPincode"
+                  placeholder="Pincode"
+                  value={formData.currentPincode}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="checkbox-container">
-          <input
-            type="checkbox"
-            name="agreeToTerms"
-            checked={formData.agreeToTerms}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="agreeToTerms">
-            I hereby declare that the information provided in this membership form is true and accurate to the best of my knowledge. I agree to abide by the rules and regulations of the organization and consent to the processing of my personal data as per the privacy policy.
-          </label>
-        </div>
+          <div className="checkbox-container">
+            <input
+              type="checkbox"
+              name="agreeToTerms"
+              checked={formData.agreeToTerms}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="agreeToTerms">
+              I hereby declare that the information provided in this membership form is true and accurate to the best of my knowledge. I agree to abide by the rules and regulations of the organization and consent to the processing of my personal data as per the privacy policy.
+            </label>
+          </div>
 
-        <div className="submit-button-container">
-          <button type="submit" className="submit-button">Submit</button>
-        </div>
-      </form>
-      <div className="bank-details">
+          <div className="submit-button-container">
+            <button type="submit" className="submit-button">Submit</button>
+          </div>
+        </form>
+        <div className="bank-details">
 
+        </div>
       </div>
-    </div>
-    <Footer />
-    
+      <Footer />
     </>
   );
 };
