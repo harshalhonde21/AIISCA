@@ -97,5 +97,5 @@ const memberSchema = new mongoose.Schema({
   }
 });
 
-const Member = mongoose.model("Member", memberSchema);
+const Member = mongoose.model("AIISCAMember", memberSchema);
 export default Member;

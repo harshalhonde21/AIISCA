@@ -23,6 +23,6 @@ const imageSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Gallery = mongoose.model('Image', imageSchema);
+const Gallery = mongoose.model('AIISCAImage', imageSchema);
 
 export default Gallery;
