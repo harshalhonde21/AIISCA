@@ -118,9 +118,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="footer-page-container">
         <Footer />
-      </div>
     </>
   );
 };

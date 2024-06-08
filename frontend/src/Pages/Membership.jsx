@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Css/Membership.css';
-
+import Footer from '../Components/Footer';
 const Membership = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -40,7 +40,7 @@ const Membership = () => {
     }
 
     try {
-      const response = await fetch('YOUR_BACKEND_URL/membership', {
+      const response = await fetch('http://143.110.182.40:5500/api/v3/member/get-member', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,6 +81,7 @@ const Membership = () => {
   };
 
   return (
+    <>
     <div className="membership-form-container">
       <h1>Membership Application Form</h1>
       <form className="membership-form" onSubmit={handleSubmit}>
@@ -287,8 +288,13 @@ const Membership = () => {
           <button type="submit" className="submit-button">Submit</button>
         </div>
       </form>
-    
+      <div className="bank-details">
+
+      </div>
     </div>
+    <Footer />
+    
+    </>
   );
 };
 
