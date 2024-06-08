@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.membership-form-container {
+  margin-top: 5.5rem;
+
+  position: relative;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.membership-form-container h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 100;
+  color: #1e31d6;
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+
+}
+
+.membership-form-container h1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #FFD700;
+  margin: 10px auto 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.membership-form {
+    height: 100%;
+    width: 100%;
+    background-color: #1e31d6;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.membership-form input,
+.membership-form select,
+.membership-form textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 0;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  color: white;
+  margin: 10px 0;
+
+  .checkbox-container input[type="checkbox"]{
+    margin: 0;
+  }
+}
+
+.membership-form input:focus,
+.membership-form select:focus,
+.membership-form textarea:focus {
+  outline: none;
+}
+
+.membership-form input::placeholder,
+.membership-form textarea::placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+.membership-form .submit-button {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #EFD703;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.membership-form button:hover {
+  background-color: #007bff;
+  color: #EFD703;
+}
+
+.personal-info,
+.educational-background {
+  width: 100%;
+  text-align: left;
+  
+}
+
+.personal-info h2,
+.educational-background h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #FFD700;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .half-width {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    color: white;
+    text-align: justify;
+    gap: 20px;
+    font-size: 16px;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    width: 30px;
+    margin: 5px;
+  }
+  
+ 
+  
+  .checkbox-container label {
+    font-size: 0.9em;
+  }
+  
+  .submit-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submit-button-container p {
+    margin: 20px 0 0;
+    color: white;
+    text-align: center;
+  }
+  
+  .submit-button {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #EFD703;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #EFD703;
+    color: #007bff;
+  }
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .membership-form-container h1 {
+    font-size: 2.5em;
+  }
+  .membership-form{
+    padding: 50px 30px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .half-width {
+    width: 100%;
+  }
+  .checkbox-container label {
+    font-size: 0.8em;
+  }
+
+  .submit-button-container p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .membership-form-container h1 {
+    font-size: 2em;
+  }
+
+  .checkbox-container label {
+    font-size: 0.7em;
+  }
+
+  .submit-button-container p {
+    font-size: 0.7em;
+  }
+}
