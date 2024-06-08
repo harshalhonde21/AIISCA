@@ -12,6 +12,7 @@ import { isLogin } from "./actions/userAction";
 import { setIsLoginFalse } from "./slices/userSlice";
 import Loader from "./components/Loader";
 import Profile from "./pages/Profile";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +65,11 @@ function App() {
           element={isAuthenticated ? <MembershipTable /> : <Navigate to="/" />}
         />          
       </Routes>
+
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     </>
   );
 }

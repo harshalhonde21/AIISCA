@@ -1,35 +1,65 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./AddBlogForm.css";
+import toast from "react-hot-toast"
+
 
 export default function AddBlogForm() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState(new Date());
-  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
-      title,
-      author,
-      date,
-      content,
-    };
 
-    // Replace this URL with your actual upload URL
-    const uploadUrl = "https://example.com/upload";
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("date", date);
+    formData.append("description", description);
+    formData.append("image", image);
 
-    axios
-      .post(uploadUrl, formData)
-      .then((response) => {
-        console.log("Success:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    try {
+      const response = await axios.post(
+        "http://localhost:5500/api/v6/blog/add-blog",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      setTitle("");
+      setAuthor("");
+      setDate(new Date());
+      setDescription("");
+      setImage(null);
+
+      console.log("Success:", response.data);
+      toast.success("Blog added successfully");
+    } catch (error) {
+      if (error.response) {
+        console.error("Error:", error.response.data);
+        if (error.response.status === 400) {
+          toast.error("Bad Request: " + error.response.data.message);
+        } else if (error.response.status === 500) {
+          toast.error("Server Error: Please try again later");
+        } else {
+          toast.error("Error: " + error.response.data.message);
+        }
+      } else if (error.request) {
+        console.error("Error:", error.request);
+        toast.error("No response received from server");
+      } else {
+        console.error("Error:", error.message);
+        toast.error("Error: " + error.message);
+      }
+    }
   };
 
   return (
@@ -76,15 +106,26 @@ export default function AddBlogForm() {
             />
           </div>
         </div>
-        <label className="AddBlog__form__label" htmlFor="content">
-          Content
+        <label className="AddBlog__form__label" htmlFor="description">
+          Description
         </label>
         <textarea
           className="AddBlog__form__textarea"
-          id="content"
-          name="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          id="description"
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+        <label className="AddBlog__form__label" htmlFor="image">
+          Image
+        </label>
+        <input
+          className="AddBlog__form__input"
+          type="file"
+          id="image"
+          name="image"
+          onChange={(e) => setImage(e.target.files[0])}
           required
         />
         <div className="AddBlog__form__button__container">
