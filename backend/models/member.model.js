@@ -7,7 +7,7 @@ const memberSchema = new mongoose.Schema({
     type: String,
     unique: true,
     default: function() {
-      return `M-${Math.floor(1000 + Math.random() * 9000)}`; // Generate a random membership ID
+      return `M-${Math.floor(1000 + Math.random() * 9000)}`; 
     }
   },
   fullName: {
