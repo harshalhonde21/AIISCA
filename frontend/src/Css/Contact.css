@@ -13,7 +13,8 @@
 
 .contact-heading h1 {
   color: #1e31d6;
-  font-size: 5rem;
+  font-size: 3rem;
+  font-weight: 100;
   font-family: "Saira Stencil One", sans-serif;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -22,7 +23,7 @@
 .contact-heading h1::after {
   content: "";
   display: block;
-  width: 400px;
+  width: 300px;
   height: 5px;
   background-color: #ffd700;
   margin: 5px auto 0;

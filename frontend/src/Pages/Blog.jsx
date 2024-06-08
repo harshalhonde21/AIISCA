@@ -1,9 +1,9 @@
 import React from 'react'
-
+import BlogContainer from '../Components/BlogContainer'
 const Blog = () => {
   return (
     <div>
-      i am blog
+      <BlogContainer />
     </div>
   )
 }
