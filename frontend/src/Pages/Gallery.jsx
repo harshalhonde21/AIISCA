@@ -16,7 +16,7 @@ const Gallery = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch('http://localhost:5500/api/v4/gallery/get-images');
+      const response = await fetch('https://aiisca.onrender.com/api/v4/gallery/get-images');
       const data = await response.json();
       setImages(data.images);
     } catch (error) {

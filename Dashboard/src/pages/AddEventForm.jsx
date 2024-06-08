@@ -22,7 +22,7 @@ const AddEventForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/api/v5/event/upload-event",
+        "https://aiisca.onrender.com/api/v5/event/upload-event",
         formData,
         {
           headers: {

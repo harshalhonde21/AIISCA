@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5500/api/v2/contact/add-contacts",
+        "https://aiisca.onrender.com/api/v2/contact/add-contacts",
         formData,
         {
           headers: {

@@ -8,7 +8,7 @@ const MembershipTable = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5500/api/v3/member/get-member')
+    axios.get('https://aiisca.onrender.com/api/v3/member/get-member')
       .then(response => {
         const members = response.data.members.map(member => ({
           fullName: member.fullName,

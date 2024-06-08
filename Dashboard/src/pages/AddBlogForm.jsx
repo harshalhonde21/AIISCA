@@ -25,7 +25,7 @@ export default function AddBlogForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/api/v6/blog/add-blog",
+        "https://aiisca.onrender.com/api/v6/blog/add-blog",
         formData,
         {
           headers: {

@@ -8,7 +8,7 @@ const ContactTable = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5500/api/v2/contact/get-contacts')
+    axios.get('https://aiisca.onrender.com/api/v2/contact/get-contacts')
       .then(response => {
         const contacts = response.data.contacts.map(contact => ({
           id: contact._id, // Add an id field here

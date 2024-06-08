@@ -40,7 +40,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5500/api/v5/event/get-event');
+      const response = await axios.get('https://aiisca.onrender.com/api/v5/event/get-event');
       const data = response.data;
 
       const currentTimestamp = new Date().getTime();

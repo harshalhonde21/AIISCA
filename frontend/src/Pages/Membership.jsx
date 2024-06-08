@@ -46,7 +46,7 @@ const Membership = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5500/api/v3/member/add-member', {
+      const response = await fetch('https://aiisca.onrender.com/api/v3/member/add-member', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,6 @@ const Membership = () => {
 
       if (response.ok) {
         alert('Membership application submitted successfully!');
-        // Reset form data
         setFormData({
           fullName: '',
           gender: '',
