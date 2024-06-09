@@ -48,7 +48,7 @@ const EventContainer = () => {
             <p>
             AIISCA is an autonomous Dalit movement organization founded on 16 July 2023 . We firmly believe in creating an independent cadre-based movement and nurturing leadership at both the grassroots and national levels. 
             </p>
-            <button>Join With Us</button>
+            <button style={{padding:'10px', marginTop:'3rem', borderRadius:"15px", border:'1.5px solid #1e31d6', color:'#1e31d6', fontSize:'1.2rem', fontWeight:'700'}}>Join With Us</button>
           </div>
         </div>
       </div>
