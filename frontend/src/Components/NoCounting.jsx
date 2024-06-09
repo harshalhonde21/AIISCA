@@ -4,7 +4,7 @@ import { MdOutlineInsertPhoto } from "react-icons/md";
 import { BsCalendar4Event } from "react-icons/bs";
 import { LiaAwardSolid } from "react-icons/lia";
 import CountUp from 'react-countup';
-import "./EventContainer.css";
+import "./NoCouting.css";
 
 const NoCounting = () => {
     return (

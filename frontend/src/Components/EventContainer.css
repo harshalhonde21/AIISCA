@@ -65,20 +65,20 @@
   color: #666;
 }
 
-.event-description-containers {
+.event-description-container {
   margin-top: 20px;
   
 
 }
 
-.event-description-containers h2 {
+.event-description-container h2 {
   font-size: 18px;
   color: #333;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
 }
 
-.event-description-containers p {
+.event-description-container p {
   font-size: 14px;
   color: #666;
   line-height: 1.5;
@@ -88,7 +88,7 @@
 
 }
 
-.event-description-containers button {
+.event-description-container button {
   padding: 10px 20px;
   color: #1e31d6;
   cursor: pointer;
@@ -136,27 +136,29 @@
 }
 
 
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 819px) {
   .child-event-containers {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .event-description-containers{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
+
+  .event-description-containers h2 {
+    font-size: 16px;
   }
-  .event-image-containers img {
-    width: 300px;
-    height: auto;
-    border-radius: 15px;
+
+  .event-description-containers p {
+    font-size: 12px;
+    width: auto;
   }
+
+  .event-description-containers button {
+    font-size: 14px; /* Decrease button font size */
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
   .counting-container {
     flex-direction: column; 
     align-items: center; 
