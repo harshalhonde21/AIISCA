@@ -67,6 +67,8 @@
 
 .event-description-container {
   margin-top: 20px;
+  
+
 }
 
 .event-description-container h2 {
@@ -83,6 +85,7 @@
   margin-bottom: 15px;
   width: 27rem;
   font-family: "Poppins", sans-serif;
+
 }
 
 .event-description-container button {
@@ -96,47 +99,70 @@
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+/* NoCounting CSS */
+
+.counting-container {
+  height: auto;
+  background-color: #1e31d6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-around;
+  padding: 25px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+}
+
+.count-sub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.name-count,
+.count-number {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.react-icons {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+
+@media only screen and (max-width: 819px) {
   .child-event-containers {
     flex-direction: column;
-    margin-bottom: 5rem;
+    justify-content: center;
+    align-items: center;
   }
 
-  .time-box {
-    width: 40px;
-    height: 40px;
-    padding: 20px;
-  }
-
-  .time-label {
-    font-size: 10px;
-  }
-
-  .time-value {
-    font-size: 12px;
-  }
-
-  .event-description-container h2 {
+  .event-description-containers h2 {
     font-size: 16px;
   }
 
-  .event-description-container p {
+  .event-description-containers p {
     font-size: 12px;
     width: auto;
   }
 
-  .event-description-container button {
+  .event-description-containers button {
     font-size: 14px; /* Decrease button font size */
   }
 }
-
-
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .counting-container {
     flex-direction: column; 
     align-items: center; 
+    justify-content: center;
     gap: 2rem; 
     padding: 15px; 
   }
@@ -149,5 +175,40 @@
   .react-icons {
     font-size: 2rem; 
   }
-}
 
+  .event-info-time-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 15px;
+  }
+  
+
+  
+}
+@media screen and (max-width:420px) {
+  .child-event-containers {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+  }
+
+  .event-description-containers p {
+    width: 100%;
+  }
+  .event-image-containers img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .counting-container {
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px; 
+  }
+}
