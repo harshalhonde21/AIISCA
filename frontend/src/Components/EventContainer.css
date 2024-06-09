@@ -21,13 +21,13 @@
   border-radius: 15px;
 }
 
-.event-info-containers {
+.event-info-container {
   flex-grow: 1;
   margin-left: 20px;
   padding: 15px;
 }
 
-.event-info-time-containers {
+.event-info-time-container {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -65,18 +65,18 @@
   color: #666;
 }
 
-.event-description-containers {
+.event-description-container {
   margin-top: 20px;
 }
 
-.event-description-containers h2 {
+.event-description-container h2 {
   font-size: 18px;
   color: #333;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
 }
 
-.event-description-containers p {
+.event-description-container p {
   font-size: 14px;
   color: #666;
   line-height: 1.5;
@@ -85,7 +85,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.event-description-containers button {
+.event-description-container button {
   padding: 10px 20px;
   color: #1e31d6;
   cursor: pointer;
@@ -96,44 +96,7 @@
   font-weight: bold;
 }
 
-/* NoCounting CSS */
-
-.counting-container {
-  height: auto;
-  background-color: #1e31d6;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  justify-content: space-around;
-  padding: 25px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
-}
-
-.count-sub-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.name-count,
-.count-number {
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.react-icons {
-  font-size: 1.8rem;
-  color: #ffffff;
-}
-
-
-@media only screen and (max-width: 819px) {
+@media only screen and (max-width: 768px) {
   .child-event-containers {
     flex-direction: column;
     margin-bottom: 5rem;
@@ -153,19 +116,21 @@
     font-size: 12px;
   }
 
-  .event-description-containers h2 {
+  .event-description-container h2 {
     font-size: 16px;
   }
 
-  .event-description-containers p {
+  .event-description-container p {
     font-size: 12px;
     width: auto;
   }
 
-  .event-description-containers button {
+  .event-description-container button {
     font-size: 14px; /* Decrease button font size */
   }
 }
+
+
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {

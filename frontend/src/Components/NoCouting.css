@@ -1,0 +1,35 @@
+/* NoCounting CSS */
+
+.counting-container {
+    height: auto;
+    background-color: #1e31d6;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: space-around;
+    padding: 25px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
+  }
+  
+  .count-sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  
+  .name-count,
+  .count-number {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .react-icons {
+    font-size: 1.8rem;
+    color: #ffffff;
+  }

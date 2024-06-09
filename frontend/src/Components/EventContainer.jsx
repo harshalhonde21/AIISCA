@@ -24,8 +24,8 @@ const EventContainer = () => {
         <div className="event-image-containers">
           <img src="/baba.png" alt="" />
         </div>
-        <div className="event-info-containers">
-          <div className="event-info-time-containers">
+        <div className="event-info-container">
+          <div className="event-info-time-container">
             <div className="time-box">
               <span className="time-label">Days</span>
               <span className="time-value">{formatTime(remainingTime.days)}</span>
