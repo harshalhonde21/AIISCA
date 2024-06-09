@@ -12,6 +12,7 @@ import "./App.css";
 import Manifesto from "./Pages/Manifesto";
 import Demands from "./Pages/Demands";
 import ParticularEvent from "./Pages/ParticularEvent";
+import ParticularBlog from "./Pages/ParticularBlog";
 
 const App = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/membership" element={<Membership />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/event/:id" element={<ParticularEvent />} />
+        <Route path="/blog/:id" element={<ParticularBlog />} />
       </Routes>
     </Fragment>
   );
