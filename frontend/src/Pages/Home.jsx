@@ -1,7 +1,7 @@
 import { Fragment } from "react";
+import "../Css/Home.css";
 import EventContainer from "../Components/EventContainer";
 import AboutContainer from "../Components/AboutContainer";
-import "../Css/Home.css";
 import LeaderContainer from "../Components/LeaderContainer";
 import BlogContainer from "../Components/BlogContainer";
 import NoCounting from "../Components/NoCounting";
@@ -32,6 +32,7 @@ const Home = () => {
       <Footer />
     </Fragment>
   );
+  
 };
 
 export default Home;

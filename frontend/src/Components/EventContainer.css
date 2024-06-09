@@ -21,13 +21,13 @@
   border-radius: 15px;
 }
 
-.event-info-containers {
+.event-info-container {
   flex-grow: 1;
   margin-left: 20px;
   padding: 15px;
 }
 
-.event-info-time-containers {
+.event-info-time-container {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -67,6 +67,8 @@
 
 .event-description-containers {
   margin-top: 20px;
+  
+
 }
 
 .event-description-containers h2 {
@@ -83,6 +85,7 @@
   margin-bottom: 15px;
   width: 27rem;
   font-family: "Poppins", sans-serif;
+
 }
 
 .event-description-containers button {
@@ -133,45 +136,31 @@
 }
 
 
-@media only screen and (max-width: 819px) {
-  .child-event-containers {
-    flex-direction: column;
-    margin-bottom: 5rem;
-  }
-
-  .time-box {
-    width: 40px;
-    height: 40px;
-    padding: 20px;
-  }
-
-  .time-label {
-    font-size: 10px;
-  }
-
-  .time-value {
-    font-size: 12px;
-  }
-
-  .event-description-containers h2 {
-    font-size: 16px;
-  }
-
-  .event-description-containers p {
-    font-size: 12px;
-    width: auto;
-  }
-
-  .event-description-containers button {
-    font-size: 14px; /* Decrease button font size */
-  }
-}
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+  .child-event-containers {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .event-description-containers{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+  }
+  .event-image-containers img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+  }
   .counting-container {
     flex-direction: column; 
     align-items: center; 
+    justify-content: center;
     gap: 2rem; 
     padding: 15px; 
   }
@@ -184,5 +173,39 @@
   .react-icons {
     font-size: 2rem; 
   }
-}
 
+  .event-info-time-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 15px;
+  }
+  
+
+  
+}
+@media screen and (max-width:420px) {
+  .child-event-containers {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+  }
+  .event-description-containers p {
+    width: 100%;
+  }
+  .event-image-containers img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .counting-container {
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px; 
+  }
+}

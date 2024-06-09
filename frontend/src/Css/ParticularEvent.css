@@ -81,8 +81,18 @@ body {
     color: #1e31d6;
     margin-bottom: 20px;
   }
-
+  .event-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
   .event-description{
     font-size: 0.7em;
+    display: flex;
+  }
+  .event-description-container p{
+    width: auto;
   }
 }
