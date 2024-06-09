@@ -20,12 +20,12 @@ const EventContainer = () => {
 
   return (
     <Fragment>
-      <div className="child-event-container">
-        <div className="event-image-container">
+      <div className="child-event-containers">
+        <div className="event-image-containers">
           <img src="/baba.png" alt="" />
         </div>
-        <div className="event-info-container">
-          <div className="event-info-time-container">
+        <div className="event-info-containers">
+          <div className="event-info-time-containers">
             <div className="time-box">
               <span className="time-label">Days</span>
               <span className="time-value">{formatTime(remainingTime.days)}</span>
@@ -43,7 +43,7 @@ const EventContainer = () => {
               <span className="time-value">{formatTime(remainingTime.seconds)}</span>
             </div>
           </div>
-          <div className="event-description-container">
+          <div className="event-description-containers">
             <h2>We are going to arrange a get together!</h2>
             <p>
             AIISCA is an autonomous Dalit movement organization founded on 16 July 2023 . We firmly believe in creating an independent cadre-based movement and nurturing leadership at both the grassroots and national levels. 

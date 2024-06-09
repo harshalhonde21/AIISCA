@@ -11,7 +11,7 @@ const ParticularEvent = () => {
   }
 
   return (
-    <div className="event-container">
+    <div className="event-containers">
       <h1 className="event-title">{event.title}</h1>
       <div className="event-banner">
         <img src={event.imageUrl} alt={event.title} className="event-banner-image" />

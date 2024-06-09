@@ -12,7 +12,7 @@ body {
 }
 
 
-.event-container {
+.event-containers {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  margin-top: 38rem; 
+  margin-top: 8rem; 
 }
 
 .event-title {
@@ -80,6 +80,9 @@ body {
     font-size: 1.4em;
     color: #1e31d6;
     margin-bottom: 20px;
-    margin-top: 45rem; 
+  }
+
+  .event-description{
+    font-size: 0.7em;
   }
 }

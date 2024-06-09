@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.child-event-container {
+.child-event-containers {
   height: auto;
   background-color: whitesmoke;
   display: flex;
@@ -9,25 +9,25 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.2);
 }
 
-.event-image-container {
+.event-image-containers {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.event-image-container img {
-  max-width: 100%;
-  width: 500px;
+.event-image-containers img {
+  width: 300px;
   height: auto;
+  border-radius: 15px;
 }
 
-.event-info-container {
+.event-info-containers {
   flex-grow: 1;
   margin-left: 20px;
   padding: 15px;
 }
 
-.event-info-time-container {
+.event-info-time-containers {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -65,18 +65,18 @@
   color: #666;
 }
 
-.event-description-container {
+.event-description-containers {
   margin-top: 20px;
 }
 
-.event-description-container h2 {
+.event-description-containers h2 {
   font-size: 18px;
   color: #333;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
 }
 
-.event-description-container p {
+.event-description-containers p {
   font-size: 14px;
   color: #666;
   line-height: 1.5;
@@ -85,7 +85,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.event-description-container button {
+.event-description-containers button {
   padding: 10px 20px;
   color: #1e31d6;
   cursor: pointer;
@@ -94,40 +94,6 @@
   border: none;
   background-color: none;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 768px) {
-  .child-event-container {
-    flex-direction: column;
-    margin-bottom: 5rem;
-  }
-
-  .time-box {
-    width: 40px;
-    height: 40px;
-    padding: 20px;
-  }
-
-  .time-label {
-    font-size: 10px;
-  }
-
-  .time-value {
-    font-size: 12px;
-  }
-
-  .event-description-container h2 {
-    font-size: 16px;
-  }
-
-  .event-description-container p {
-    font-size: 12px;
-    width: auto;
-  }
-
-  .event-description-container button {
-    font-size: 14px; /* Decrease button font size */
-  }
 }
 
 /* NoCounting CSS */
@@ -164,6 +130,41 @@
 .react-icons {
   font-size: 1.8rem;
   color: #ffffff;
+}
+
+
+@media only screen and (max-width: 819px) {
+  .child-event-containers {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .time-box {
+    width: 40px;
+    height: 40px;
+    padding: 20px;
+  }
+
+  .time-label {
+    font-size: 10px;
+  }
+
+  .time-value {
+    font-size: 12px;
+  }
+
+  .event-description-containers h2 {
+    font-size: 16px;
+  }
+
+  .event-description-containers p {
+    font-size: 12px;
+    width: auto;
+  }
+
+  .event-description-containers button {
+    font-size: 14px; /* Decrease button font size */
+  }
 }
 
 /* Responsive adjustments */
