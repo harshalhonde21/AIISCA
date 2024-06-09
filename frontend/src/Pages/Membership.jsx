@@ -1,88 +1,106 @@
-import React, { useState } from 'react';
-import '../Css/Membership.css';
-import Footer from '../Components/Footer';
+import React, { useState } from "react";
+import "../Css/Membership.css";
+import Footer from "../Components/Footer";
 
 const Membership = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    gender: '',
-    dateOfBirth: '',
-    category: '',
-    caste: '',
-    email: '',
-    contactNumber: '',
-    permanentAddress: '',
-    permanentCity: '',
-    permanentState: '',
-    permanentPincode: '',
-    highestQualification: '',
-    occupation: '',
-    currentAddress: '',
-    currentCity: '',
-    currentState: '',
-    currentPincode: '',
+    fullName: "",
+    gender: "",
+    dateOfBirth: "",
+    category: "",
+    caste: "",
+    email: "",
+    contactNumber: "",
+    permanentAddress: "",
+    permanentCity: "",
+    permanentState: "",
+    permanentPincode: "",
+    highestQualification: "",
+    occupation: "",
+    currentAddress: "",
+    currentCity: "",
+    currentState: "",
+    currentPincode: "",
     agreeToTerms: false,
+    sameAsPermanent: false,
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
+
+    if (name === "sameAsPermanent" && checked) {
+      setFormData((prevData) => ({
+        ...prevData,
+        currentAddress: prevData.permanentAddress,
+        currentCity: prevData.permanentCity,
+        currentState: prevData.permanentState,
+        currentPincode: prevData.permanentPincode,
+      }));
+    } else if (name === "sameAsPermanent" && !checked) {
+      setFormData((prevData) => ({
+        ...prevData,
+        currentAddress: "",
+        currentCity: "",
+        currentState: "",
+        currentPincode: "",
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.agreeToTerms) {
-      alert('You must agree to the terms and conditions before submitting.');
-      return;
-    }
-
-    if (formData.permanentAddress !== formData.currentAddress) {
-      alert('Permanent Address and Current Address must be the same.');
+      alert("You must agree to the terms and conditions before submitting.");
       return;
     }
 
     try {
-      const response = await fetch('https://aiisca.onrender.com/api/v3/member/add-member', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://aiisca.onrender.com/api/v3/member/add-member",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
-        alert('Membership application submitted successfully!');
+        alert("Membership application submitted successfully!");
         setFormData({
-          fullName: '',
-          gender: '',
-          dateOfBirth: '',
-          category: '',
-          caste: '',
-          email: '',
-          contactNumber: '',
-          permanentAddress: '',
-          permanentCity: '',
-          permanentState: '',
-          permanentPincode: '',
-          highestQualification: '',
-          occupation: '',
-          currentAddress: '',
-          currentCity: '',
-          currentState: '',
-          currentPincode: '',
+          fullName: "",
+          gender: "",
+          dateOfBirth: "",
+          category: "",
+          caste: "",
+          email: "",
+          contactNumber: "",
+          permanentAddress: "",
+          permanentCity: "",
+          permanentState: "",
+          permanentPincode: "",
+          highestQualification: "",
+          occupation: "",
+          currentAddress: "",
+          currentCity: "",
+          currentState: "",
+          currentPincode: "",
           agreeToTerms: false,
+          sameAsPermanent: false,
         });
       } else {
         const errorData = await response.json();
         alert(`Failed to submit the application: ${errorData.message}`);
       }
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      alert('An error occurred. Please try again.');
+      console.error("Error submitting the form:", error);
+      alert("An error occurred. Please try again.");
     }
   };
 
@@ -105,14 +123,18 @@ const Membership = () => {
             </div>
             <div className="form-row">
               <div className="half-width">
-                <input
-                  type="text"
+                <select
                   name="gender"
-                  placeholder="Gender"
                   value={formData.gender}
                   onChange={handleChange}
                   required
-                />
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Transgender">Transgender</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
               <div className="half-width">
                 <input
@@ -181,9 +203,9 @@ const Membership = () => {
               <div className="half-width">
                 <input
                   type="text"
-                  name="permanentCity"
-                  placeholder="City"
-                  value={formData.permanentCity}
+                  name="permanentState"
+                  placeholder="State"
+                  value={formData.permanentState}
                   onChange={handleChange}
                   required
                 />
@@ -191,9 +213,9 @@ const Membership = () => {
               <div className="half-width">
                 <input
                   type="text"
-                  name="permanentState"
-                  placeholder="State"
-                  value={formData.permanentState}
+                  name="permanentCity"
+                  placeholder="City"
+                  value={formData.permanentCity}
                   onChange={handleChange}
                   required
                 />
@@ -212,16 +234,23 @@ const Membership = () => {
           </div>
 
           <div className="educational-background">
-            <h2>Educational Background:</h2>
+            <h2>Educational Background:</h2>  
             <div className="form-row">
-              <input
-                type="text"
+              <select
                 name="highestQualification"
-                placeholder="Highest Qualification"
                 value={formData.highestQualification}
                 onChange={handleChange}
                 required
-              />
+              >
+                <option value="">Select highest Qualification</option>
+                <option value="10th Pass">10th Pass</option>
+                <option value="12th Pass">12th Pass</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="PhD Scholar">PhD Scholar</option>
+                <option value="PhD">PhD</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div className="form-row">
               <input
@@ -233,6 +262,16 @@ const Membership = () => {
                 required
               />
             </div>
+
+            <div className="checkbox-container">
+              <input
+                type="checkbox"
+                name="sameAsPermanent"
+                checked={formData.sameAsPermanent}
+                onChange={handleChange}
+              />
+              <label htmlFor="sameAsPermanent">Same as Permanent Address</label>
+            </div>
             <div className="form-row">
               <input
                 type="text"
@@ -241,19 +280,10 @@ const Membership = () => {
                 value={formData.currentAddress}
                 onChange={handleChange}
                 required
+                disabled={formData.sameAsPermanent}
               />
             </div>
             <div className="form-row">
-              <div className="half-width">
-                <input
-                  type="text"
-                  name="currentCity"
-                  placeholder="City"
-                  value={formData.currentCity}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
               <div className="half-width">
                 <input
                   type="text"
@@ -262,6 +292,18 @@ const Membership = () => {
                   value={formData.currentState}
                   onChange={handleChange}
                   required
+                  disabled={formData.sameAsPermanent}
+                />
+              </div>
+              <div className="half-width">
+                <input
+                  type="text"
+                  name="currentCity"
+                  placeholder="City"
+                  value={formData.currentCity}
+                  onChange={handleChange}
+                  required
+                  disabled={formData.sameAsPermanent}
                 />
               </div>
               <div className="half-width">
@@ -272,6 +314,7 @@ const Membership = () => {
                   value={formData.currentPincode}
                   onChange={handleChange}
                   required
+                  disabled={formData.sameAsPermanent}
                 />
               </div>
             </div>
@@ -286,17 +329,20 @@ const Membership = () => {
               required
             />
             <label htmlFor="agreeToTerms">
-              I hereby declare that the information provided in this membership form is true and accurate to the best of my knowledge. I agree to abide by the rules and regulations of the organization and consent to the processing of my personal data as per the privacy policy.
+              I hereby declare that the information provided in this membership
+              form is true and accurate to the best of my knowledge. I agree to
+              abide by the rules and regulations of the organization and consent
+              to the processing of my personal data as per the privacy policy.
             </label>
           </div>
 
           <div className="submit-button-container">
-            <button type="submit" className="submit-button">Submit</button>
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
           </div>
         </form>
-        <div className="bank-details">
-
-        </div>
+        <div className="bank-details"></div>
       </div>
       <Footer />
     </>

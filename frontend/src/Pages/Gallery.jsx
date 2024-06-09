@@ -9,6 +9,7 @@ const Gallery = () => {
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const [filteredImages, setFilteredImages] = useState([]);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
     fetchImages();
@@ -19,6 +20,10 @@ const Gallery = () => {
       const response = await fetch('https://aiisca.onrender.com/api/v4/gallery/get-images');
       const data = await response.json();
       setImages(data.images);
+
+      // Extract unique city names
+      const uniqueCities = [...new Set(data.images.map(image => image.city.toLowerCase()))];
+      setCities(uniqueCities);
     } catch (error) {
       console.error('Error fetching images:', error);
     }
@@ -58,6 +63,15 @@ const Gallery = () => {
     filterImages();
   }, [name, year, city, date, images, filterImages]);
 
+  const getYears = () => {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = currentYear; i >= 1900; i--) {
+      years.push(i);
+    }
+    return years;
+  };
+
   return (
     <>
       <div className="gallery-container">
@@ -73,22 +87,30 @@ const Gallery = () => {
             value={name} 
             onChange={(e) => setName(e.target.value)} 
           />
-          <input 
-            type="text" 
-            placeholder="Year" 
-            value={year} 
-            onChange={(e) => setYear(e.target.value)} 
-          />
-          <input 
-            type="text" 
-            placeholder="City" 
-            value={city} 
-            onChange={(e) => setCity(e.target.value)} 
-          />
+          <select
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          >
+            <option value="">Select Year</option>
+            {getYears().map((yearValue, index) => (
+              <option key={index} value={yearValue}>{yearValue}</option>
+            ))}
+          </select>
+          <select
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          >
+            <option value="">Select City</option>
+            {cities.map((cityName, index) => (
+              <option key={index} value={cityName}>{cityName}</option>
+            ))}
+          </select>
           <input 
             type="date" 
             placeholder="Date" 
             value={date} 
+            min="0001-01-01" // Limits date selection from 1 to 31
+            max="9999-12-31"
             onChange={(e) => setDate(e.target.value)} 
           />
         </div>

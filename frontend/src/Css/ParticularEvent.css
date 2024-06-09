@@ -20,13 +20,13 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin-top: 38rem; 
 }
 
 .event-title {
   font-size: 2em;
   color: #1e31d6;
   margin-bottom: 20px;
-  margin-top: 55rem; 
 }
 
 .event-banner {

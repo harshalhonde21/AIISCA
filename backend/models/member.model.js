@@ -67,7 +67,7 @@ const memberSchema = new mongoose.Schema({
   highestQualification: {
     type: String,
     required: [true, "Highest Qualification is required"],
-    enum: ["10th Pass", "12th Pass", "Undergraduate", "Graduate", "Post Graduate", "PhD Scholar", "PhD", "Other"]
+    enum: ["10th Pass", "12th Pass", "Undergraduate", "Post Graduate", "PhD Scholar", "PhD", "Other"]
   },
   occupation: {
     type: String,

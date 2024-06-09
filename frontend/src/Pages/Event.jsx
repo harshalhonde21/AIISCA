@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../Css/Event.css';
 import Footer from '../Components/Footer';
+import Loader from "../Components/Loader"; 
 
 const Events = () => {
   const [upcomingEvent, setUpcomingEvent] = useState(null);
   const [previousEvents, setPreviousEvents] = useState([]);
   const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,12 +52,22 @@ const Events = () => {
 
       setUpcomingEvent(upcoming);
       setPreviousEvents(previous);
+      setLoading(false); // Set loading to false after fetching data
     } catch (error) {
       console.error('Error fetching events:', error);
+      setLoading(false); // Set loading to false in case of an error
     }
   };
 
   const formatTime = value => (value < 10 ? `0${value}` : value);
+
+  const truncateDescription = (description, wordLimit) => {
+    const words = description.split(' ');
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(' ') + '...';
+    }
+    return description;
+  };
 
   const handleReadMore = (event) => {
     navigate(`/event/${event._id}`, { state: { event } });
@@ -65,7 +77,9 @@ const Events = () => {
     <>
       <div className="events-container">
         <h1>Upcoming Events</h1>
-        {upcomingEvent ? (
+        {loading ? (
+          <Loader /> // Show loader in place of upcoming event card
+        ) : upcomingEvent ? (
           <div className="child-event-container">
             <div className="event-image-container">
               <img src={upcomingEvent.imageUrl} alt={upcomingEvent.title} />
@@ -91,7 +105,7 @@ const Events = () => {
               </div>
               <div className="event-description-container">
                 <h2>{upcomingEvent.title}</h2>
-                <p>{upcomingEvent.description}</p>
+                <p>{truncateDescription(upcomingEvent.description, 30)}</p>
                 <p><strong>Date:</strong> {new Date(upcomingEvent.date).toLocaleDateString()}</p>
                 <button onClick={() => handleReadMore(upcomingEvent)}>Read More</button>
               </div>
@@ -102,16 +116,20 @@ const Events = () => {
         )}
 
         <h1>Previous Events</h1>
-        <div className="previous-events-grid">
-          {previousEvents.map(event => (
-            <div key={event._id} className="previous-event event-item">
-              <img src={event.imageUrl} alt={event.title} />
-              <h2>{event.title}</h2>
-              <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
-              <button onClick={() => handleReadMore(event)} style={{padding:'5px', marginTop:"10px", borderRadius:'10px', color:'#1e31d6', border:"1px solid #1e31d6"}}>Read More</button>
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <Loader /> // Show loader in place of previous events grid
+        ) : (
+          <div className="previous-events-grid">
+            {previousEvents.map(event => (
+              <div key={event._id} className="previous-event event-item">
+                <img src={event.imageUrl} alt={event.title} />
+                <h2 style={{fontSize:'1rem'}}>{event.title}</h2>
+                <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
+                <button onClick={() => handleReadMore(event)} style={{padding:'5px', marginTop:"10px", borderRadius:'10px', color:'#1e31d6', border:"1px solid #1e31d6"}}>Read More</button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <Footer />
     </>

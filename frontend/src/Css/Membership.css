@@ -73,6 +73,11 @@
   }
 }
 
+.membership-form option{
+  color: #1e31d6;
+  font-weight: 700;
+}
+
 .membership-form input:focus,
 .membership-form select:focus,
 .membership-form textarea:focus {
