@@ -7,9 +7,11 @@ video {
 }
 
 .event-container {
+  margin: 10px;
   width: auto;
-  height: 376px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
