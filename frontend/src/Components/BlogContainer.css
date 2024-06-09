@@ -9,7 +9,7 @@
   .heading-blog-container {
     font-family: "Montserrat", sans-serif;
     color: #1e31d6;
-    font-size: 2.5vw; /* Responsive font size */
+    font-size: 2.5vw; 
     font-weight: 600;
     line-height: 1.2;
     text-align: left;
@@ -25,7 +25,7 @@
   }
   
   .blog {
-    width: calc(35% - 2rem);
+    width: calc(25% - 0.5rem);
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 15px;

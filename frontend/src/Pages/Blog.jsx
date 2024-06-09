@@ -1,0 +1,49 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../Css/Blog.css";
+import { useNavigate } from "react-router-dom";
+
+const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get("https://aiisca.onrender.com/api/v6/blog/get-blogs")
+      .then(response => {
+        if (response.data.success) {
+          setBlogs(response.data.blogs);
+        }
+      })
+      .catch(error => {
+        console.error("There was an error fetching the blogs!", error);
+      });
+  }, []);
+
+  const handleReadMore = (blog) => {
+    navigate(`/blog/${blog._id}`, {state : {blog}});
+  }
+
+  return (
+    <div className="blog-container">
+      <h1 className="blog-headings">Featured Blogs</h1>
+      <div className="all-blogs-container">
+        {blogs.map(blog => (
+          <div className="blog" key={blog._id}>
+            <img src={blog.imageUrl} alt={blog.title} />
+            <div className="text-blog">
+              <div className="time-name">{blog.author} • {new Date(blog.date).toLocaleDateString()}</div>
+              <div className="blog-heading">{blog.title}</div>
+              <div className="blog-para">
+                {blog.description.split(" ").slice(0, 30).join(" ")}...
+              </div>
+              <button className="blog-button" onClick={() => handleReadMore(blog)}>Read More</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Blog;
