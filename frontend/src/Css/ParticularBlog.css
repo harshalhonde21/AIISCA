@@ -25,8 +25,8 @@
   font-size: 2.5rem;
 }
 .blog-cover-image {
-  max-height: 350px;
-  width: 80vw;
+  max-height: 500px;
+  width: 60vw;
 border-radius: 15px ;
 overflow: hidden;
   }
@@ -38,7 +38,7 @@ overflow: hidden;
 }
 
 .sub-title{
-  width: 80vw;
+  width: 60vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,10 +55,10 @@ h3{
 
 .blog-description{
     font-family: poppins;
-    color: #1e31d6;
+    color: black;
     font-size: 16px;
     margin: 1rem 0rem;
-    width: 80vw;
+    width: 60vw;
     padding: 1rem;
 }
 

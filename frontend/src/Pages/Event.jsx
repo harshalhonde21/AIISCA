@@ -52,10 +52,10 @@ const Events = () => {
 
       setUpcomingEvent(upcoming);
       setPreviousEvents(previous);
-      setLoading(false); // Set loading to false after fetching data
+      setLoading(false); 
     } catch (error) {
       console.error('Error fetching events:', error);
-      setLoading(false); // Set loading to false in case of an error
+      setLoading(false);
     }
   };
 
@@ -78,7 +78,7 @@ const Events = () => {
       <div className="events-container">
         <h1>Upcoming Events</h1>
         {loading ? (
-          <Loader /> // Show loader in place of upcoming event card
+          <Loader /> 
         ) : upcomingEvent ? (
           <div className="child-event-container">
             <div className="event-image-container">

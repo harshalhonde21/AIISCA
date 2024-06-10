@@ -16,7 +16,7 @@
 }
 
 .event-image-containers img {
-  width: 300px;
+  width: 550px;
   height: auto;
   border-radius: 15px;
 }
@@ -97,6 +97,10 @@
   border: none;
   background-color: none;
   font-weight: bold;
+}
+
+.event-description-containers button:hover {
+  cursor: pointer; 
 }
 
 /* NoCounting CSS */

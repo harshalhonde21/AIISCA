@@ -1,39 +1,61 @@
-import { Fragment } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import BlueLoader from "../Components/BlueLoader";
 import "./BlogContainer.css";
 
 const BlogContainer = () => {
-    return (
-        <Fragment>
-            <div className="blog-outer-container">
-                <div className="heading-blog-container">
-                    ALL BLOG POSTS
-                </div>
-                <div className="all-blogs-container">
-                    <div className="blog">
-                        <img src="/event.png" alt="" />
-                        <div className="text-blog">
-                            <div className="time-name">Alec Whitten • 17 Jan 2022</div>
-                            <div className="blog-heading">Bill Walsh leadership lessons</div>
-                            <div className="blog-para">Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</div>
-                            <button className="blog-button">Read More</button>
-                        </div>
-                        
-                    </div>
-                    <div className="blog">
-                        <img src="/event.png" alt="" />
-                        <div className="text-blog">
-                            <div className="time-name">Alec Whitten • 17 Jan 2022</div>
-                            <div className="blog-heading">Bill Walsh leadership lessons</div>
-                            <div className="blog-para">Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</div>
-                            <button className="blog-button">Read More</button>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </Fragment>
-    )
-}
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-export default BlogContainer
+  useEffect(() => {
+    axios.get("https://aiisca.onrender.com/api/v6/blog/get-blogs")
+      .then(response => {
+        if (response.data.success) {
+          setEvents(response.data.blogs.slice(0, 2)); // Limit to only two events
+        }
+      })
+      .catch(error => {
+        console.error("There was an error fetching the blogs!", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  const handleReadMore = () => {
+    navigate("/blog");
+  };
+
+  return (
+    <Fragment>
+      <div className="blog-outer-container">
+        <div className="heading-blog-container">
+          ALL BLOG POSTS
+        </div>
+        <div className="all-blogs-container">
+          {loading ? (
+            <BlueLoader /> // Render BlueLoader while loading
+          ) : (
+            events.map(event => (
+              <div className="blogs" key={event._id}>
+                <img src={event.imageUrl} alt={event.title} />
+                <div className="text-blog">
+                  <div className="time-name">{event.author} • {new Date(event.date).toLocaleDateString()}</div>
+                  <div className="blog-heading">{event.title}</div>
+                  <div className="blog-para">
+                    {event.description.split(" ").slice(0, 30).join(" ")}...
+                  </div>
+                  <button className="blog-button" onClick={() => handleReadMore()}>Read More</button>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default BlogContainer;

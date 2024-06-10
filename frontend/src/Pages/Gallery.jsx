@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import '../Css/Gallery.css';
 import Footer from '../Components/Footer';
+import BlueLoader from '../Components/BlueLoader'; // Import the BlueLoader component
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -10,6 +11,7 @@ const Gallery = () => {
   const [date, setDate] = useState('');
   const [filteredImages, setFilteredImages] = useState([]);
   const [cities, setCities] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     fetchImages();
@@ -26,6 +28,8 @@ const Gallery = () => {
       setCities(uniqueCities);
     } catch (error) {
       console.error('Error fetching images:', error);
+    } finally {
+      setLoading(false); // Set loading to false after fetching data
     }
   };
 
@@ -79,7 +83,7 @@ const Gallery = () => {
           <h1>GALLERY</h1>
           <div className='underline'></div>
         </div>
-        
+
         <div className="input-container">
           <input 
             type="text" 
@@ -109,25 +113,29 @@ const Gallery = () => {
             type="date" 
             placeholder="Date" 
             value={date} 
-            min="0001-01-01" // Limits date selection from 1 to 31
+            min="0001-01-01"
             max="9999-12-31"
             onChange={(e) => setDate(e.target.value)} 
           />
         </div>
 
-        <div className="image-grid">
-          {filteredImages.map((image) => (
-            <div key={image._id} className="image-item">
-              <img src={image.imageUrl} alt={image.imageName} />
-              <div className="image-details" style={{display:'none'}}>
-                <p><strong>Name:</strong> {image.imageName}</p>
-                <p><strong>Date:</strong> {image.date}</p>
-                <p><strong>Year:</strong> {image.year}</p>
-                <p><strong>City:</strong> {image.city}</p>
+        {loading ? (
+          <BlueLoader />
+        ) : (
+          <div className="image-grid">
+            {filteredImages.map((image) => (
+              <div key={image._id} className="image-item">
+                <img src={image.imageUrl} alt={image.imageName} />
+                <div className="image-details" style={{ display: 'none' }}>
+                  <p><strong>Name:</strong> {image.imageName}</p>
+                  <p><strong>Date:</strong> {image.date}</p>
+                  <p><strong>Year:</strong> {image.year}</p>
+                  <p><strong>City:</strong> {image.city}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
       <Footer />
     </>
