@@ -18,7 +18,7 @@ const ParticularBlog = () => {
       </div>
       <div className="sub-title">
         <h3 className="author-name">{blog.author}</h3>
-        <h3 className="publish-date">{blog.date}</h3>
+        <h3 className="publish-date">{new Date(blog.date).toLocaleDateString()}</h3>
       </div>
       <p className="blog-description">{blog.description}</p>
 
