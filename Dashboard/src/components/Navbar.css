@@ -21,10 +21,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100px; 
-    height: 80px; 
-    display: flex;
-    align-items: center;
+    width: 180px; 
+    height: 150px;
   }
   
   .navbar-container {
@@ -41,16 +39,15 @@ body {
   
   .navbar-items {
     display: flex;
+  gap: 3.2rem;
   }
   
   .navbar-item {
-    margin-right: 20px;
     cursor: pointer;
   }
   
   .navbar-item,
   .sidebar-item {
-    margin-right: 35px;
     cursor: pointer;
     text-decoration: none;
     color: white;

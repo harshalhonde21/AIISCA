@@ -118,7 +118,7 @@ const MembershipTable = () => {
   };
 
   return (
-    <div className="table-container">
+    <div className="tables-container">
       <div className="button-container">
         <DownloadTableExcel
           filename="Membership Data"

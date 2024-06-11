@@ -1,42 +1,54 @@
-import React, { Fragment, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginFail, setIsLoginFalse } from '../slices/userSlice.js';
+import React, { Fragment, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginFail, setIsLoginFalse } from "../slices/userSlice.js";
 import { isLogin } from "../actions/userAction.js";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import "./Profile.css"
+import "./Profile.css";
 
 const Profile = React.memo(() => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector(state => state.user.user);
+  const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
     dispatch(isLogin());
-  }, [dispatch]); 
+  }, [dispatch]);
 
   const handleLogout = () => {
     dispatch(loginFail());
     dispatch(setIsLoginFalse());
-    localStorage.removeItem('token'); 
+    localStorage.removeItem("token");
     navigate("/");
-    toast.success('Successfully Logout!')
+    toast.success("Successfully Logout!");
   };
 
   return (
     <Fragment>
       <div className="profile-container">
-        <h2 className="profile-heading">Profile</h2>
+        <div className="navbar-logo">
+        <h1>Profile</h1>
+          <Link to="/addblog" style={{display:"flex",
+           justifyContent:"center", alignItems:"center"}} className="logo-link">
+            <img src="/images/Logo.png" alt="Logo" />
+          </Link>
+        </div>
         <div>
-          <p className="profile-info"><strong>Username:</strong> {user && user.name}</p>
-          <p className="profile-info"><strong>Email:</strong> {user && user.email}</p>
-          <button className="logout-button" onClick={handleLogout}>Logout</button>
+          <p className="profile-info">
+            <strong>Username:</strong> {user && user.name}
+          </p>
+          <p className="profile-info">
+            <strong>Email:</strong> {user && user.email}
+          </p>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
     </Fragment>
-  )
+  );
 });
 
-Profile.displayName = 'Profile';
+Profile.displayName = "Profile";
 
 export default Profile;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector } from "react-redux";
 
@@ -20,11 +20,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
+        {/* <div className="navbar-logo">
           <Link to="/addblog" className="logo-link" onClick={closeSidebar}>
             <img src="/images/Logo.png" alt="Logo" />
           </Link>
-        </div>
+        </div> */}
         <div className="navbar-items">
           <NavLink
             to="/addblog"
@@ -37,6 +37,31 @@ const Navbar = () => {
           >
             Add Blog
           </NavLink>
+
+          <NavLink
+            to="/allblogs"
+            className="navbar-item"
+            style={{
+              borderBottom:
+                location.pathname === "/allblogs" ? "2px solid white" : "none",
+            }}
+            onClick={closeSidebar}
+          >
+            All Blog
+          </NavLink>
+
+          <NavLink
+            to="/allevents"
+            className="navbar-item"
+            style={{
+              borderBottom:
+                location.pathname === "/allevents" ? "2px solid white" : "none",
+            }}
+            onClick={closeSidebar}
+          >
+            All Events
+          </NavLink>
+
           <NavLink
             to="/addevent"
             className="navbar-item"
@@ -61,16 +86,19 @@ const Navbar = () => {
           >
             Add Image
           </NavLink>
+
           <NavLink
-          to="/contacttable"
-          className="navbar-item"
-          style={{
-            borderBottom:
-              location.pathname === "/contacttable" ? "2px solid white" : "none",
-          }}
-          onClick={closeSidebar} 
+            to="/allimages"
+            className="navbar-item"
+            style={{
+              borderBottom:
+                location.pathname === "/allimages"
+                  ? "2px solid white"
+                  : "none",
+            }}
+            onClick={closeSidebar}
           >
-          Contact Table
+            All Image
           </NavLink>
           <NavLink
           to="/membershiptable"
