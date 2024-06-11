@@ -62,23 +62,16 @@ h3{
     padding: 1rem;
 }
 
-
-
-
-@media (max-width: 768px) {
-  
-    
-    }
-
 @media screen and (max-width: 420px){
+
     .blog-cover-image {
         height: 100%;
       }
       .blog-description{
-        font-size: 14px;
+        font-size: 12px;
       }
       .blog-title{
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
       }
       .sub-title{

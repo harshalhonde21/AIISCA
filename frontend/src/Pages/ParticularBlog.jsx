@@ -21,9 +21,6 @@ const ParticularBlog = () => {
         <h3 className="publish-date">{new Date(blog.date).toLocaleDateString()}</h3>
       </div>
       <p className="blog-description">{blog.description}</p>
-
-      {/* TODO */}
-      {/* adding more blog posts */}
       
     </div>
   );

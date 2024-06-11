@@ -88,6 +88,10 @@
     .blog {
       width: calc(70% - 1rem); 
     }
+
+    .blogs {
+      width: calc(70% - 1rem); 
+    }
     
     .heading-blog-container {
       font-size: 4vw; 
@@ -102,6 +106,10 @@
    
   @media screen and (max-width: 500px) {
     .blog {
+      width: calc(100% - 1rem); 
+    }
+
+    .blogs {
       width: calc(100% - 1rem); 
     }
     

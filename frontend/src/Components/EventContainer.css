@@ -191,7 +191,7 @@
 
   
 }
-@media screen and (max-width:420px) {
+@media screen and (max-width:586px) {
   .child-event-containers {
     flex-direction: column;
     justify-content: center;
