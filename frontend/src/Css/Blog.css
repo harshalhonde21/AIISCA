@@ -20,3 +20,10 @@
   .all-blogs-container{
     margin-top: 1rem;
   }
+
+
+  @media (max-width: 640px) {
+    .blog-headings{
+      font-size: 2.5rem;
+    }
+  }
