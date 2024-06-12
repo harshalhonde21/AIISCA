@@ -39,8 +39,9 @@ const BlogContainer = () => {
             <BlueLoader /> // Render BlueLoader while loading
           ) : (
             events.map(event => (
-              <div className="blogs" key={event._id}>
-                <img src={event.imageUrl} alt={event.title} />
+              <div className="blog" key={event._id}>
+              <div className="image-cover-container">
+                <img src={event.imageUrl} alt={event.title} /></div>
                 <div className="text-blog">
                   <div className="time-name">{event.author} • {new Date(event.date).toLocaleDateString()}</div>
                   <div className="blog-heading">{event.title}</div>

@@ -26,7 +26,7 @@
   }
   
   .blog {
-    width: calc(60% - 0.5rem);
+    width: calc(30% - 5rem);
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -34,26 +34,16 @@
   }
   
   .blog img {
-    width: 100%;
-    height: auto;
     margin-bottom: 1rem;
+    object-fit: cover;
+    width: 100%;
   }
-  
 
-  .blogs {
-    width: calc(70% - 1rem);
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2);
+  .image-cover-container{
+    max-height: 250px;
+    width: 300px;
   }
-  
-  .blogs img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 15px;
-  }
+
   .text-blog {
     font-family: "Montserrat", sans-serif;
   }
