@@ -6,7 +6,7 @@
   }
   
   .blog-headings{
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
     margin: 0;
     font-family: "Saira Stencil One", sans-serif;
@@ -20,4 +20,11 @@
 
   .all-blogs-container{
     margin-top: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    .blog-headings{
+      font-size: 1.5em;
+      margin-top: 1rem;
+    }
   }
