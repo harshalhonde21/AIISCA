@@ -12,6 +12,7 @@
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
@@ -25,7 +26,8 @@
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2),
     0 0 10px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(255, 255, 255, 0.3);
-  justify-content: center; /* Centering content */
+  justify-content: center; 
+  margin-bottom: 1.5rem;
 }
 
 .card-team-member {
@@ -50,7 +52,7 @@
   border-radius: 15px;
   color: #1e31d6;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
   font-weight: bold;
 }
