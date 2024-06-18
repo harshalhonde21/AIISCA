@@ -25,7 +25,6 @@ const Demands = () => {
         <section className="third-page-container">
           <div className="head-para-combine-component">
             <p
-              style={{ fontSize: "1.5rem", marginBottom: "6rem", fontFamily:'Poppins' }}
               className="para-combine"
             >
               Babasaheb had a dream to transform India’s political democracy
@@ -111,7 +110,7 @@ const Demands = () => {
           <img src="/chakra.svg" alt="" className="image-behind-list" />
           <img src="/chakra2.svg" alt="" className="image-behind-list2" />
           <img src="/chakra3.svg" alt="" className="image-behind-list3" />
-          <h1 style={{ fontSize: "4rem" }} className="fourth-focus-component">
+          <h1 className="fourth-focus-component">
             Looking at the present situation, we demand:
           </h1>
           <div className="list-of-work">

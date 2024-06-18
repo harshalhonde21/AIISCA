@@ -44,6 +44,16 @@
   border-radius: 125px;
 }
 
+.fourth-focus-component {
+  font-size: 3rem;
+}
+
+.para-combine {
+  font-size: 1.5rem;
+  margin-bottom: 6rem;
+  font-family: "Poppins";
+}
+
 @media screen and (max-width: 950px) {
   .outer-about-main-component {
     margin-top: 2rem;
@@ -68,5 +78,19 @@
   }
   .front-page-component {
     flex-direction: column;
+  }
+  .para-combine {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .fourth-focus-component {
+    font-size: 1.2rem;
+    margin-bottom: -2.8rem;
+  }
+
+  .para-combine {
+    font-size: 0.75rem;
   }
 }
