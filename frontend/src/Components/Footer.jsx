@@ -53,7 +53,11 @@ const Footer = () => {
             <li>Youtube Playlist</li>
           </ul>
         </div>
+
       </footer>
+        <div className="section copyright">
+          <p className='para-copy'>© 2024 - All rights reserved - Designed and Developed with ❤️ by <strong> <a target='_blank' style={{textDecoration:'none', color:'#1e31d6'}} href='https://tars.co.in'> TARS TECHNOLOGIES</a></strong></p>
+        </div>
     </Fragment>
   )
 }

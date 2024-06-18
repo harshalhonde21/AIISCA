@@ -75,9 +75,44 @@ ul li {
   align-items: center;
 }
 
+.copyright p {
+  font-family: "Poppins";
+  color: #52525b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .footer {
     gap: 50px;
+  }
+
+  .footer-para {
+    width: 250px;
+  }
+
+  .copyright p {
+    font-family: "Poppins";
+    color: #52525b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 281px) {
+  .footer-para {
+    width: 200px;
+  }
+
+  .copyright p {
+    font-family: "Poppins";
+    color: #52525b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.6rem;
   }
 }
 
@@ -85,7 +120,8 @@ ul li {
 
 .newsletter-component {
   background-color: #1e31d6;
-  margin-top: 5rem;padding: 70px 10%;
+  margin-top: 5rem;
+  padding: 70px 10%;
   text-align: center;
   border-radius: 15px;
 }
@@ -168,11 +204,8 @@ ul li {
 }
 
 @media screen and (max-width: 281px) {
-
-
   .footer-para {
     width: 200px;
     font-family: "Montserrat";
   }
-
 }
