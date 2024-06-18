@@ -11,11 +11,11 @@ const Home = () => {
   return (
     <Fragment>
       <video autoPlay muted loop>
-        <source src="/videoav.mov" type="video/mp4" />
+        <source src="/aiisca.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="event-container">
-        <EventContainer />
+        <EventContainer />  
       </div>
       <div className="about-container">
         <AboutContainer />
