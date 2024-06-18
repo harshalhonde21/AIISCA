@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "../Css/Blog.css";
 import { useNavigate } from "react-router-dom";
 import BlueLoader from "../Components/BlueLoader"
+import Footer from "../Components/Footer";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -51,6 +52,9 @@ const Blog = () => {
           ))
         )}
       </div>
+      <div className="footer-page-container">
+          <Footer />
+        </div>
     </div>
   );
 };
