@@ -30,7 +30,7 @@ const Manifesto = () => {
             </p>
           </div>
           <div className="head-para-combine-component">
-            <h4 className="heading-combine">Reservation in Private Sector and Government Institutions</h4>
+            <h4 className="heading-combine"><span>-</span>Reservation in Private Sector and Government Institutions</h4>
             <p className="para-combine">
               We demand the extension of the reservation policy to the  private sector in both employment and educational institutions. This  will provide opportunities for Dalits to thrive and succeed in all  sectors of the economy.<br />
 
@@ -39,19 +39,19 @@ const Manifesto = () => {
               We  advocate for the enactment of comprehensive laws on reservations that  guarantee population proportionate inclusion of Dalits in all government  bodies, educational institutions, and public services.<br />
             </p>
 
-            <h4 className="heading-combine">Socio-Economic Upliftment</h4>
+            <h4 className="heading-combine"><span>-</span>Socio-Economic Upliftment</h4>
             <p className="para-combine">
               To combat the prevailing caste-based discrimination and  atrocities faced by Dalits, we propose the establishment of separate  settlements for Dalits, away from dominant castes, where they can have  access to basic amenities and means of livelihood, particularly land.<br />
               We  urge the government to provide financial and institutional support to  enable the establishment of autonomous educational and economic  institutions for Dalits. These institutions will promote skill  development, entrepreneurship, and self-reliance within our community.
             </p>
 
-            <h4 className="heading-combine">Caste Atrocity Prevention and Justice</h4>
+            <h4 className="heading-combine"><span>-</span>Caste Atrocity Prevention and Justice</h4>
             <p className="para-combine">
               To protect Dalits from caste-based atrocities, we demand the  implementation of stringent laws and the establishment of fast-track  courts for the timely dispensation of justice.<br />
               We  call for the formation of special investigation teams to ensure proper  and unbiased handling of cases related to caste violence and  discrimination.
             </p>
 
-            <h4 className="heading-combine">Political Representation and Accountability</h4>
+            <h4 className="heading-combine"><span>-</span>Political Representation and Accountability</h4>
             <p className="para-combine">
               We emphasize the need to support and strengthen Dalit-led  political parties at both regional and national levels. Their presence  and influence are vital in voicing the concerns and interests of Dalits  effectively.<br />
 
@@ -59,7 +59,7 @@ const Manifesto = () => {
             </p>
 
             <h4 className="heading-combine">
-              Education and Awareness
+            <span>-</span>Education and Awareness
             </h4>
             <p className="para-combine">
               We urge the government to implement inclusive curricula that highlight  the contributions of Dalit leaders and promote awareness about  caste-based discrimination in educational institutions. We call for targeted programs and initiatives to promote education among  Dalit children, ensuring their access to quality education and equal  opportunities.
