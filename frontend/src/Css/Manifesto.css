@@ -43,6 +43,7 @@
   color: #ffffff;
 }
 
+
 @media screen and (max-width: 750px) {
   .manifesto-with-name-container {
     margin: 1rem;
@@ -167,6 +168,7 @@
 
   .list-of-work ul li {
     font-size: 1.2rem; 
+    word-spacing: normal;
   }
 
   .fourth-focus-component {
@@ -174,7 +176,7 @@
   }
 
   .list-of-work ul {
-    padding: 2rem;
+    padding: 2rem 0.5rem;
   }
 
   .fourth-focus-component::after {
@@ -219,10 +221,11 @@
 }
 
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 460px) {
 
   .list-of-work ul li {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    word-spacing: normal;
   }
     
   }

@@ -27,11 +27,11 @@
 }
 
 .events-container h1::after {
-  content: '';
+  content: "";
   display: block;
   width: 400px;
   height: 5px;
-  background-color: #FFD700;
+  background-color: #ffd700;
   margin: 4px auto 0;
   position: absolute;
   left: 50%;
@@ -49,7 +49,7 @@
   border-radius: 10px;
   margin: 10px;
   text-align: left;
-  color: black; 
+  color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -131,6 +131,20 @@
   border-radius: 15px;
 }
 
+@media (max-width: 1268px) {
+  .child-event-container  {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+  }
+}
+
+@media (max-width: 908px) {
+  .child-event-container  {
+    margin: 11% 23%;
+  }
+}
+
 @media (max-width: 768px) {
   .events-container h1 {
     font-size: 3em;
@@ -143,16 +157,17 @@
 
   .child-event-container {
     flex-direction: column;
-    margin: 0 2rem; /* Adjusted margin */
-  }
-
-  .event-image-container img {
-    width: 100%; /* Ensure image fits container */
+    margin: 2rem; /* Adjusted margin */
   }
 
   .event-description-container {
     margin-top: 10px;
     width: 100%; /* Occupy full width */
+  }
+  .event-image-container img {
+    width: 86%;
+    height: 16rem;
+    border-radius: 0.8rem;
   }
 }
 
@@ -162,12 +177,13 @@
   }
 
   .child-event-container {
-    margin: 0 1rem; /* Adjusted margin */
+    margin: 4rem 0.5rem; /* Adjusted margin */
   }
 
   .time-box {
     width: 20px;
     height: 20px;
+    padding: 23px;
     /* padding: 20px; */
   }
 
@@ -176,12 +192,12 @@
   }
 
   .time-value {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .event-description-container {
     margin-top: 10px;
-    margin-left: -2rem;
+    /* margin-left: -2rem; */
     padding: 0;
   }
 
@@ -192,7 +208,6 @@
   .event-description-container p {
     font-size: 12px;
     width: 12rem;
-
   }
 
   .event-description-container button {
@@ -201,13 +216,13 @@
 
   .event-info-time-container {
     margin-left: 0rem;
-    gap: 15px;
+    gap: 7px;
   }
 
   .events-container h1::after {
     width: 200px;
     height: 5px;
-    background-color: #FFD700;
+    background-color: #ffd700;
     margin: 4px auto 0;
     position: absolute;
     left: 50%;
@@ -215,13 +230,10 @@
   }
 }
 
-@media (max-width: 1464px) {
-  .child-event-container {
-    flex-direction: column;
-    margin: 0 2rem; /* Adjusted margin */
-  }
-
+@media (max-width: 568px) {
   .event-image-container img {
-    width: 100%; /* Ensure image fits container */
+      width: 100%;
+      height: 10rem;
+      border-radius: 0.8rem;
   }
 }

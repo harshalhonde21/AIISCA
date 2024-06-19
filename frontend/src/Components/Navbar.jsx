@@ -15,7 +15,7 @@ const Navbar = ({ location }) => {
     <Fragment>
       <nav className="navbar-container">
         <div className="logo-container">
-          <img src="logo.png" alt="Your Logo" className="logo" />
+          <img src="logo2.png" alt="Your Logo" className="logo" />
         </div>
         <div className={`nav-links ${isOpen ? "active" : ""}`}>
           <ul>
