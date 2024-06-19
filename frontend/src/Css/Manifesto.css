@@ -58,8 +58,9 @@
 
   .image-manifesto-component img {
     width: 15rem;
-    margin-left: 2rem;
     border-radius: 35px;
+    margin-top: 0rem;
+
   }
   .manifesto-page-component {
     flex-direction: column;
@@ -153,6 +154,12 @@
   z-index: -1; 
 }
 
+@media screen and (max-width: 950px) {
+  .list-of-work ul li{
+    font-size: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .list-of-work {
     width: 90%; 
@@ -174,8 +181,8 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 50%;
+    left: 35px;
+    width: 60%;
     height: 4px;
     background-color: gold;
   }
@@ -197,7 +204,29 @@
     right: -30%;
     width: 15rem;
   }
+  .image-manifesto-component{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0rem;
+  
+  }
+  .image-manifesto-component img {
+    /* width: 22rem; */
+}
+.list-of-work {
+  width: 85%;
+}
 }
 
 
+@media screen and (max-width: 560px) {
 
+  .list-of-work ul li {
+    font-size: 1.2rem;
+  }
+    
+  }
+
+
+
+  
