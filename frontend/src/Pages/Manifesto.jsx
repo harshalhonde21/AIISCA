@@ -25,7 +25,7 @@ const Manifesto = () => {
         <section className="third-page-container">
           <h1 className="third-focus-component">PREAMBLE</h1>
           <div className="head-para-combine-component">
-            <p style={{ fontSize: '1.5rem', marginBottom: '6rem' }} className="para-combine">
+            <p  className="para-combine">
               We, the members of the All India Independent Scheduled Caste Association  (AIISCA), stand united in our commitment to uphold the ideals of social  justice, equality, and empowerment for Dalits across the nation.  Recognizing the challenges faced by our community, we aim to build a  strong and autonomous movement that advocates for the rights and  well-being of Dalits in all spheres of life. With the legacy of Dr. B.R.  Ambedkar as our guiding light, we pledge to work tirelessly towards  transforming the current socio-economic landscape into one that reflects  true democracy and inclusivity.
             </p>
           </div>

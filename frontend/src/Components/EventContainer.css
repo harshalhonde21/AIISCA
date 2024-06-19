@@ -148,11 +148,11 @@
   }
 
   .event-description-containers h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .event-description-containers p {
-    font-size: 12px;
+    font-size: 14px;
     width: auto;
   }
 
@@ -215,4 +215,5 @@
     justify-content: space-between;
     padding: 15px; 
   }
+  
 }

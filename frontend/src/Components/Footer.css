@@ -202,7 +202,18 @@ ul li {
   }
 
 }
-
+@media screen and (max-width: 501px) {
+.heading-newsletter-component{
+  font-size: 20px;
+  line-height: 29.18px;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+}
+.newsletter-component{
+  padding: 34px ;
+  margin: 0.5rem;
+}
+}
 @media screen and (max-width: 281px) {
   .footer-para {
     width: 200px;

@@ -168,15 +168,15 @@
   .time-box {
     width: 20px;
     height: 20px;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .time-label {
-    font-size: 5px;
+    font-size: 10px;
   }
 
   .time-value {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .event-description-container {
@@ -186,7 +186,7 @@
   }
 
   .event-description-container h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .event-description-container p {
@@ -196,12 +196,12 @@
   }
 
   .event-description-container button {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
   .event-info-time-container {
-    margin-left: -2rem;
-    gap: 5px;
+    margin-left: 0rem;
+    gap: 15px;
   }
 
   .events-container h1::after {
