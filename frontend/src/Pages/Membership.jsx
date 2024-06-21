@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Country, State, City } from 'country-state-city';
+import  { useState, useEffect } from 'react';
+import { State, City } from 'country-state-city';
 import "../Css/Membership.css";
 import Footer from "../Components/Footer";
 import Contribute from "../Components/Contribute";
