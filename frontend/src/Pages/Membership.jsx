@@ -27,15 +27,18 @@ const Membership = () => {
     sameAsPermanent: false,
   });
 
-  const [states, setStates] = useState([]);
-  const [cities, setCities] = useState([]);
+  const [permanentStates, setPermanentStates] = useState([]);
+  const [permanentCities, setPermanentCities] = useState([]);
+  const [currentStates, setCurrentStates] = useState([]);
+  const [currentCities, setCurrentCities] = useState([]);
 
   useEffect(() => {
     const indianStates = State.getStatesOfCountry('IN');
-    setStates(indianStates);
+    setPermanentStates(indianStates);
+    setCurrentStates(indianStates);
   }, []);
 
-  const handleStateChange = (e) => {
+  const handlePermanentStateChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -43,9 +46,23 @@ const Membership = () => {
     });
 
     if (name === 'permanentState') {
-      const selectedState = states.find((state) => state.name === value);
+      const selectedState = permanentStates.find((state) => state.name === value);
       const stateCities = City.getCitiesOfState('IN', selectedState.isoCode);
-      setCities(stateCities);
+      setPermanentCities(stateCities);
+    }
+  };
+
+  const handleCurrentStateChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    if (name === 'currentState') {
+      const selectedState = currentStates.find((state) => state.name === value);
+      const stateCities = City.getCitiesOfState('IN', selectedState.isoCode);
+      setCurrentCities(stateCities);
     }
   };
 
@@ -228,11 +245,11 @@ const Membership = () => {
                 <select
                   name="permanentState"
                   value={formData.permanentState}
-                  onChange={handleStateChange}
+                  onChange={handlePermanentStateChange}
                   required
                 >
                   <option value="">Select State</option>
-                  {states.map((state) => (
+                  {permanentStates.map((state) => (
                     <option key={state.isoCode} value={state.name}>
                       {state.name}
                     </option>
@@ -247,7 +264,7 @@ const Membership = () => {
                   required
                 >
                   <option value="">Select City</option>
-                  {cities.map((city) => (
+                  {permanentCities.map((city) => (
                     <option key={city.name} value={city.name}>
                       {city.name}
                     </option>
@@ -319,26 +336,36 @@ const Membership = () => {
             </div>
             <div className="form-row">
               <div className="half-width">
-                <input
-                  type="text"
+                <select
                   name="currentState"
-                  placeholder="State"
                   value={formData.currentState}
-                  onChange={handleChange}
+                  onChange={handleCurrentStateChange}
                   required
                   disabled={formData.sameAsPermanent}
-                />
+                >
+                  <option value="">Select State</option>
+                  {currentStates.map((state) => (
+                    <option key={state.isoCode} value={state.name}>
+                      {state.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="half-width">
-                <input
-                  type="text"
+                <select
                   name="currentCity"
-                  placeholder="City"
                   value={formData.currentCity}
                   onChange={handleChange}
                   required
                   disabled={formData.sameAsPermanent}
-                />
+                >
+                  <option value="">Select City</option>
+                  {currentCities.map((city) => (
+                    <option key={city.name} value={city.name}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="half-width">
                 <input
