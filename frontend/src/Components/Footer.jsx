@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="section">
           <div className="email-signup">
             <img style={{ height: "80px", width: '90px', marginLeft: '-1.2rem' }} src="/logo.png" alt="" />
-            <div className='footer-para'>Empowering Every Voice, Uplifting Every Life – Together, We Forge a Future of Equality and Justice for All.</div>
+            <div className='footer-para'>"Empowering Every Voice, Uplifting Every Life – Together, We Forge a Future of Equality and Justice for All.</div>
             <div className="social-icons">
               <a href="https://twitter.com/AIISCA1957" target="_blank" rel="noopener noreferrer"><RiTwitterXFill /></a>
               <a href="https://www.facebook.com/profile.php?id=100094911592602&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
