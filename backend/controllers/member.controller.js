@@ -5,10 +5,6 @@ export const createMember = async (req, res) => {
     try {
         const { email, contactNumber, permanentAddress, currentAddress } = req.body;
 
-        if (permanentAddress !== currentAddress) {
-            return res.status(400).json({ message: "Permanent Address and Current Address must be the same" });
-        }
-
         const existingMember = await Member.findOne({ $or: [{ email }, { contactNumber }] });
         if (existingMember) {
             return res.status(400).json({ message: "Email or Contact Number already exists" });
