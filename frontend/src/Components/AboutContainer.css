@@ -70,4 +70,33 @@
     font-size: 1rem;
     max-width: 100%;
   }
+
+  .heading-about-component::after {
+    left:25%;
+    width: 50%;
+    
+  }
+  .event-image-containers img {
+    width: 90%;
+}
+.event-info-container {
+  margin-left: 0px;
+}
+  
+}
+
+@media screen and (max-width: 785px) {
+  .heading-about-component::after {
+    left:30%;
+    width: 40%;
+    background-color: #efd703;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .heading-about-component::after {
+    left:30%;
+    width: 40%;
+    background-color: #efd703;
+  }
 }

@@ -48,7 +48,7 @@ const Demands = () => {
               India report for 1961-2012 reveals that the Brahmin community
               alone monopolizes 48 percent of the national income, which is
               above the national average income, while other upper-caste
-              communities secure 45 percent. <br /> In contrast, Dalit, Adivasi, and
+              communities secure 45 percent. <br /><br /> In contrast, Dalit, Adivasi, and
               OBC together earn only Rs. 113, 22, far less than the national
               household income average. The Socio-Economic and Caste Census 2011
               indicates that only 4 percent of SC and ST families have a member
@@ -56,7 +56,7 @@ const Demands = () => {
               poverty, absence of socio-cultural capital, and family networks,
               along with the traditional monopoly of upper-caste on the economy
               and employment, force Dalits to migrate to cities and become cheap
-              labor in the urban informal market. <br /> Moreover, the data shows the
+              labor in the urban informal market.<br /> <br /> Moreover, the data shows the
               unwillingness of both Central and State governments to improve the
               condition of SC communities. Backlog reserved vacancies in various
               government departments are widespread and have somehow
@@ -66,7 +66,7 @@ const Demands = () => {
               universities, and affiliated colleges all have backlog reserved
               vacancies. Government data reveals that the number of unfilled
               posts in the Scheduled Castes/Scheduled Tribes reserved category
-              in Central ministries has increased substantially over the years. <br />
+              in Central ministries has increased substantially over the years.<br /> <br />
               Moreover, the economic reform process in India, which began
               formally from 1991 onwards and manifested itself mainly in the
               form of liberalization, privatization, and globalization, has, on
@@ -75,7 +75,7 @@ const Demands = () => {
               the limited protection being granted to the SCs in the sphere of
               employment. The privatization has drastically narrowed down
               Dalits’ access to basic means of sustenance and development, such
-              as education, employment, and healthcare facilities. <br />The State’s
+              as education, employment, and healthcare facilities. <br /> <br />The State’s
               pursuit of privatization of public sector Units (industries and
               institutions) and the entry of MNCs without a proper policy of
               reservation in Private sectors has not only reduced the scope of
@@ -91,7 +91,7 @@ const Demands = () => {
               in electoral competition. Surprisingly, even in cases of the most
               heinous crimes against Dalits, the elected representatives stand
               in favor of their respective political parties, rather than
-              standing with the community. <br /> The silent elected representatives,
+              standing with the community.<br /> <br /> The silent elected representatives,
               acute poverty among Dalits, complete socio-political impunity to
               oppressor castes, increasing caste atrocities on Dalits,
               government unwillingness towards the upliftment of the community,
@@ -110,10 +110,10 @@ const Demands = () => {
           <img src="/chakra.svg" alt="" className="image-behind-list" />
           <img src="/chakra2.svg" alt="" className="image-behind-list2" />
           <img src="/chakra3.svg" alt="" className="image-behind-list3" />
-          <h1 className="fourth-focus-component">
+          <h1 className="fourth-focus-component f-after">
             Looking at the present situation, we demand:
           </h1>
-          <div className="list-of-work">
+          <div className="list-of-work listof">
             <ul>
               <li style={{ listStyle: "inherit" }}>
                 Reservation policy should be extended to the private sector,

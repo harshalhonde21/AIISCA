@@ -93,6 +93,6 @@ body {
     display: flex;
   }
   .event-description-container p{
-    width: auto;
+    width: 100%;
   }
 }

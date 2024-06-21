@@ -92,10 +92,18 @@
   }
   
   .heading-blog-container {
-    font-size: 4vw; 
+    font-size: 5vw;
+    text-align: center;
   }
 
   .blog-para {
     max-width: 100%;
   }
+  .blog-outer-container {
+    /* position: relative;
+    height: auto;
+    min-height: 450px;
+    background-color: #ffffff; */
+    padding: 0rem 4vw 4rem;
+}
 }

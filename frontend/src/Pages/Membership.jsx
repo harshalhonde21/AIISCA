@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Css/Membership.css";
 import Footer from "../Components/Footer";
+import Contribute from "../Components/Contribute";
 
 const Membership = () => {
   const [formData, setFormData] = useState({
@@ -342,7 +343,9 @@ const Membership = () => {
             </button>
           </div>
         </form>
-        <div className="bank-details"></div>
+        <div className="bank-details">
+        <Contribute/>
+        </div>
       </div>
       <Footer />
     </>

@@ -111,6 +111,8 @@
   color: #ffffff;
   margin-bottom: 2rem;
   font-size: 2rem;
+  display: flex;
+  gap: 5px;
 }
 
 .para-combine {
@@ -266,5 +268,26 @@
     width: 15rem;
     display: none;
   }
+  .heading-combine {
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    display: flex;
+    gap: 5px;
+  }
 }
 
+@media screen and (max-width:560px) {
+  .heading-combine {
+    font-weight: 600;
+    font-size: 1.3rem;
+   
+  }
+}
+
+@media (max-width: 490px) {
+  .third-focus-component {
+      font-size: 2rem;
+  }
+}

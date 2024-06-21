@@ -50,8 +50,20 @@
 
 .para-combine {
   font-size: 1.5rem;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
   font-family: "Poppins";
+  
+}
+
+.f-after::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 184px;
+  width: 60%;
+  height: 5px;
+  background-color: gold;
+
 }
 
 @media screen and (max-width: 950px) {
@@ -82,15 +94,58 @@
   .para-combine {
     font-size: 1.2rem;
   }
+ 
+}
+
+@media screen and (max-width: 760px) {
+  .fourth-focus-component {
+    font-size: 1.8rem;
+  }
+  .list-of-work ul {
+    padding: 1rem;
+}
+.f-after::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 170px;
+  width: 44%;
+  height: 5px;
+  background-color: gold;
+}
+  .para-with-name-container p {
+      font-size: 1.2rem;
+}
+}
+@media screen and (max-width: 560px) {
+
+.f-after::after {
+  left: 28%;
+  
+}
+
 }
 
 @media screen and (max-width: 400px) {
   .fourth-focus-component {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: -2.8rem;
   }
-
+  
   .para-combine {
-    font-size: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  .f-after::after{
+    content: "";
+      position: absolute;
+      bottom: 0;
+      left: 98px;
+      width: 44%;
+      height: 5px;
+      background-color: gold;
   }
 }

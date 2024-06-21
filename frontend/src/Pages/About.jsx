@@ -38,9 +38,9 @@ const About = () => {
         {/* third page start here */}
 
         <section className="third-page-container">
-          <h1 className="third-focus-component">KEY AREAS OF FOCUS</h1>
+          <h1 className="third-focus-component f-after">KEY AREAS OF FOCUS</h1>
           <div className="head-para-combine-component">
-            <h4 className="heading-combine">Grassroots Mobilization</h4>
+            <h4 className="heading-combine"><span>-</span>Grassroots Mobilization</h4>
             <p className="para-combine">
               We firmly believe that change begins at the grassroots level. As
               such, we actively engage in grassroots mobilization efforts,
@@ -51,7 +51,7 @@ const About = () => {
               impact within their communities.
             </p>
 
-            <h4 className="heading-combine">Advocacy and Awareness</h4>
+            <h4 className="heading-combine"><span>-</span>Advocacy and Awareness</h4>
             <p className="para-combine">
               One of our primary objectives is to raise awareness about the
               systemic challenges faced by Dalits due to caste-based
@@ -62,7 +62,7 @@ const About = () => {
               and breaking down discriminatory practices.
             </p>
 
-            <h4 className="heading-combine">Political Engagement</h4>
+            <h4 className="heading-combine"><span>-</span>Political Engagement</h4>
             <p className="para-combine">
               To effect lasting change, we recognize the significance of
               political engagement. Our movement advocates for Dalit
@@ -72,7 +72,7 @@ const About = () => {
               towards inclusive policies and legislation.
             </p>
 
-            <h4 className="heading-combine">Solidarity and Collaboration</h4>
+            <h4 className="heading-combine"><span>-</span>Solidarity and Collaboration</h4>
             <p className="para-combine">
               Unity is the cornerstone of our movement. We actively seek
               alliances with other social justice movements, organizations, and
@@ -84,7 +84,7 @@ const About = () => {
             </p>
 
             <h4 className="heading-combine">
-              Cultural Revival and Empowerment
+            <span>-</span>Cultural Revival and Empowerment
             </h4>
             <p className="para-combine">
               We celebrate Dalit culture and heritage, recognizing the richness
