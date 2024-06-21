@@ -76,12 +76,6 @@ const memberSchema = new mongoose.Schema({
   currentAddress: {
     type: String,
     required: [true, "Current Address is required"],
-    validate: {
-      validator: function(v) {
-        return v === this.permanentAddress;
-      },
-      message: "Current Address must be the same as Permanent Address"
-    }
   },
   currentCity: {
     type: String,

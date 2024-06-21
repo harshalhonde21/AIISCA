@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { Country, State, City } from 'country-state-city';
 import "../Css/Membership.css";
 import Footer from "../Components/Footer";
 import Contribute from "../Components/Contribute";
@@ -25,6 +26,28 @@ const Membership = () => {
     agreeToTerms: false,
     sameAsPermanent: false,
   });
+
+  const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const indianStates = State.getStatesOfCountry('IN');
+    setStates(indianStates);
+  }, []);
+
+  const handleStateChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    if (name === 'permanentState') {
+      const selectedState = states.find((state) => state.name === value);
+      const stateCities = City.getCitiesOfState('IN', selectedState.isoCode);
+      setCities(stateCities);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -202,24 +225,34 @@ const Membership = () => {
             </div>
             <div className="form-row">
               <div className="half-width">
-                <input
-                  type="text"
+                <select
                   name="permanentState"
-                  placeholder="State"
                   value={formData.permanentState}
-                  onChange={handleChange}
+                  onChange={handleStateChange}
                   required
-                />
+                >
+                  <option value="">Select State</option>
+                  {states.map((state) => (
+                    <option key={state.isoCode} value={state.name}>
+                      {state.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="half-width">
-                <input
-                  type="text"
+                <select
                   name="permanentCity"
-                  placeholder="City"
                   value={formData.permanentCity}
                   onChange={handleChange}
                   required
-                />
+                >
+                  <option value="">Select City</option>
+                  {cities.map((city) => (
+                    <option key={city.name} value={city.name}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="half-width">
                 <input
@@ -344,7 +377,7 @@ const Membership = () => {
           </div>
         </form>
         <div className="bank-details">
-        <Contribute/>
+          <Contribute/>
         </div>
       </div>
       <Footer />
