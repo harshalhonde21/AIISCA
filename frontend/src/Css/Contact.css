@@ -59,9 +59,7 @@
   font-family: "Poppins";
   font-weight: 800;
 }
-.contact-info-cont{
 
-}
 .contact-infos{
   display: flex;
   gap: 2rem;
@@ -100,6 +98,7 @@
 
 .contact-form input,
 .contact-form textarea {
+  color: aliceblue;
   min-width: 300px;
   padding: 10px;
   border: 2px solid #ccc;
