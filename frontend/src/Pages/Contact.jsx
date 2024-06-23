@@ -2,7 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import "../Css/Contact.css";
 import Footer from "../Components/Footer";
-
+import { FiPhoneOutgoing } from "react-icons/fi";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -61,64 +63,76 @@ const Contact = () => {
         <h1>CONTACT US</h1>
         <div className="underline"></div>
       </div>
-
       <div className="contact-form-container">
-        <h1>
-          GET <br />
-          IN <br />
-          TOUCH
-        </h1>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-row">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="FIRST NAME"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="LAST NAME"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
+        <div className="contact-info-cont">
+          <h1>CONTACT US</h1>
+          <div className="contact-infos">
+            <div className="contact-detail-icon">
+              <FaPhone  className="fa-icon" />
+              {/* <b>Mobile No :</b> */}
+             +91 7758-917446
+            </div>
+            <div className="contact-detail-icon">
+              <FaLocationDot className="fa-icon" />
+              {/* <b>Address :</b> */}
+              Dhammadeep Nagar Buddha Vihar,<br /> Binaki, Nagpur, 440017
+            </div>
           </div>
-          <div className="form-row">
-            <input
-              type="email"
-              name="email"
-              placeholder="EMAIL ID"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phoneNumber"
-              placeholder="PHONE NUMBER"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <textarea
-            name="message"
-            placeholder="MESSAGE"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-          {statusMessage && <p className="status-message">{statusMessage}</p>}
-          <button className="submit-button" type="submit">
-            SUBMIT
-          </button>
-        </form>
       </div>
-        <Footer />
+        <div className="get-in-touch">
+          <h1>GET IN TOUCH</h1>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-row">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="FIRST NAME"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="LAST NAME"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-row">
+              <input
+                type="email"
+                name="email"
+                placeholder="EMAIL ID"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="PHONE NUMBER"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="MESSAGE"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+            {statusMessage && <p className="status-message">{statusMessage}</p>}
+            <button className="submit-button" type="submit">
+              SUBMIT
+            </button>
+          </form>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };
