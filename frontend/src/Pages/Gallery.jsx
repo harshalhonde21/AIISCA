@@ -19,7 +19,7 @@ const Gallery = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch('https://aiisca.onrender.com/api/v4/gallery/get-images');
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/get-images`);
       const data = await response.json();
       setImages(data.images);
 

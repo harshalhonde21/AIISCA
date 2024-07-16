@@ -10,7 +10,7 @@ const BlogContainer = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://aiisca.onrender.com/api/v6/blog/get-blogs")
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/get-blogs`)
       .then(response => {
         if (response.data.success) {
           setEvents(response.data.blogs.slice(0, 2)); // Limit to only two events

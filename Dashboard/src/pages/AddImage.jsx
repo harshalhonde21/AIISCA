@@ -24,7 +24,7 @@ const AddImage = () => {
 
     try {
       const response = await axios.post(
-        'https://aiisca.onrender.com/api/v4/gallery/upload-image',
+        `${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/upload-image`,
         formData,
         {
           headers: {

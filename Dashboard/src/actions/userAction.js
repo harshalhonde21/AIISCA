@@ -7,6 +7,7 @@ import {
   setIsLoginTrue,
 } from "../slices/userSlice.js";
 import toast from "react-hot-toast";
+let login_url = "http://localhost:5505"
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -19,7 +20,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://aiisca.onrender.com/api/v1/user/login`,
+      `${login_url}/api/v1/user/login`,
       { email, password },
       config
     );
@@ -67,7 +68,7 @@ export const isLogin = () => async (dispatch) => {
       },
     };
 
-    const response = await axios.get(`https://aiisca.onrender.com/api/v1/user/isLogin`, config);
+    const response = await axios.get(`${login_url}/api/v1/user/isLogin`, config);
 
     if (response.data.success && response.data.isLogin) {
       dispatch(setIsLoginTrue());

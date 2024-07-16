@@ -28,7 +28,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://aiisca.onrender.com/api/v2/contact/add-contacts",
+        `${import.meta.env.VITE_BACKEND_API}/api/v2/contact/add-contacts`,
         formData,
         {
           headers: {

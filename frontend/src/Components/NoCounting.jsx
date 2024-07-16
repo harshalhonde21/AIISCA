@@ -18,7 +18,7 @@ const NoCounting = () => {
 
   const fetchEventCount = async () => {
     try {
-      const response = await axios.get("https://aiisca.onrender.com/api/v5/event/get-event");
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/get-event`);
       if (response.data) {
         setEventCount(response.data.length);
       }
@@ -29,7 +29,7 @@ const NoCounting = () => {
 
   const fetchPhotoCount = async () => {
     try {
-      const response = await axios.get("https://aiisca.onrender.com/api/v4/gallery/get-images");
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/get-images`);
       if (response.data.success) {
         setPhotoCount(response.data.images.length); 
       }

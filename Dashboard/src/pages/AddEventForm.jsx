@@ -22,7 +22,7 @@ const AddEventForm = () => {
 
     try {
       const response = await axios.post(
-        "https://aiisca.onrender.com/api/v5/event/upload-event",
+        `${import.meta.env.VITE_BACKEND_API}/api/v5/event/upload-event`,
         formData,
         {
           headers: {
