@@ -102,7 +102,7 @@ const Membership = () => {
 
     try {
       const response = await fetch(
-        "https://aiisca.onrender.com/api/v3/member/add-member",
+        `${import.meta.env.VITE_BACKEND_API}/api/v3/member/add-member`,
         {
           method: "POST",
           headers: {

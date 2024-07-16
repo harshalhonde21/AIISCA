@@ -40,7 +40,7 @@ const EventContainer = () => {
 
   const fetchUpcomingEvent = async () => {
     try {
-      const response = await axios.get('https://aiisca.onrender.com/api/v5/event/get-event');
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/get-event`);
       const data = response.data;
 
       const currentTimestamp = new Date().getTime();

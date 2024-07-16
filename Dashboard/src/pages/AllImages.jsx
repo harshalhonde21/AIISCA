@@ -18,7 +18,7 @@ const AllImages = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('https://aiisca.onrender.com/api/v4/gallery/get-images');
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/get-images`);
       setImages(response.data.images);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -62,7 +62,7 @@ const AllImages = () => {
     }
 
     try {
-      await axios.put(`https://aiisca.onrender.com/api/v4/gallery/update-image/${id}`, formData, {
+      await axios.put(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/update-image/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -78,7 +78,7 @@ const AllImages = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://aiisca.onrender.com/api/v4/gallery/delete-image/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/delete-image/${id}`);
       setImages(images.filter(image => image._id !== id));
       alert('Image deleted successfully');
     } catch (error) {

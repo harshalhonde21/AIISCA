@@ -12,7 +12,7 @@ const Blog = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://aiisca.onrender.com/api/v6/blog/get-blogs")
+    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/get-blogs`)
       .then(response => {
         if (response.data.success) {
           setBlogs(response.data.blogs);
