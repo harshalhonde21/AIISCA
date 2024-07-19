@@ -7,7 +7,9 @@ import {
   setIsLoginTrue,
 } from "../slices/userSlice.js";
 import toast from "react-hot-toast";
-let login_url = "http://localhost:5505"
+const login_url = import.meta.env.VITE_BACKEND_API
+
+
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -20,7 +22,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `${import.meta.env.VITE_BACKEND_API}/api/v1/user/login`,
+      `${login_url}/api/v1/user/login`,
       { email, password },
       config
     );
@@ -67,7 +69,7 @@ export const isLogin = () => async (dispatch) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v1/user/isLogin`, config);
+    const response = await axios.get(`${login_url}/api/v1/user/isLogin`, config);
 
 
     if (response.data.success && response.data.isLogin) {

@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./AllBlogs.css";
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const AllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [editBlogId, setEditBlogId] = useState(null);
@@ -19,7 +22,7 @@ const AllBlogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/get-blogs`);
+      const response = await axios.get(`${backend_api}/api/v6/blog/get-blogs`);
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error('Error fetching blogs:', error);
@@ -63,7 +66,7 @@ const AllBlogs = () => {
     }
 
     try {
-      await axios.put(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/update-blog/${id}`, formData, {
+      await axios.put(`${backend_api}/api/v6/blog/update-blog/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -78,7 +81,7 @@ const AllBlogs = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/delete-blog/${id}`);
+      await axios.delete(`${backend_api}/api/v6/blog/delete-blog/${id}`);
       setBlogs(blogs.filter(blog => blog._id !== id));
       alert("Blog deleted successfully");
     } catch (error) {

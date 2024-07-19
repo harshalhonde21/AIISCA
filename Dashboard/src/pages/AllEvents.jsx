@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import "./AllEvents.css";
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
   const [editEventId, setEditEventId] = useState(null);
@@ -18,7 +21,7 @@ const AllEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/get-event`);
+      const response = await axios.get(`${backend_api}/api/v5/event/get-event`);
       setEvents(response.data);
     } catch (error) {
       console.error('Error fetching events:', error);
@@ -60,7 +63,7 @@ const AllEvents = () => {
     }
 
     try {
-      await axios.put(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/update-event/${id}`, formData, {
+      await axios.put(`${backend_api}/api/v5/event/update-event/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -75,7 +78,7 @@ const AllEvents = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/delete-event/${id}`);
+      await axios.delete(`${backend_api}/api/v5/event/delete-event/${id}`);
       setEvents(events.filter(event => event._id !== id));
       alert("Event deleted successfully");
     } catch (error) {

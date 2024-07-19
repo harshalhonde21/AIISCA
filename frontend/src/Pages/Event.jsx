@@ -5,6 +5,9 @@ import '../Css/Event.css';
 import Footer from '../Components/Footer';
 import Loader from "../Components/Loader"; 
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const Events = () => {
   const [upcomingEvent, setUpcomingEvent] = useState(null);
   const [previousEvents, setPreviousEvents] = useState([]);
@@ -42,7 +45,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/get-event`);
+      const response = await axios.get(`${backend_api}/api/v5/event/get-event`);
       const data = response.data;
 
       const currentTimestamp = new Date().getTime();

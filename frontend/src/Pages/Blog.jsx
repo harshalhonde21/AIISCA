@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import BlueLoader from "../Components/BlueLoader"
 import Footer from "../Components/Footer";
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +15,7 @@ const Blog = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/get-blogs`)
+    axios.get(`${backend_api}/api/v6/blog/get-blogs`)
       .then(response => {
         if (response.data.success) {
           setBlogs(response.data.blogs);

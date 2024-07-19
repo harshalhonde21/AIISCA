@@ -4,6 +4,9 @@ import "../Css/Membership.css";
 import Footer from "../Components/Footer";
 import Contribute from "../Components/Contribute";
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const Membership = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -102,7 +105,7 @@ const Membership = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_API}/api/v3/member/add-member`,
+        `${backend_api}/api/v3/member/add-member`,
         {
           method: "POST",
           headers: {

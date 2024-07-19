@@ -4,11 +4,14 @@ import { DownloadTableExcel } from 'react-export-table-to-excel';
 import axios from 'axios';
 import '../pages/MembershipTable.css';
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const MembershipTable = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v3/member/get-member`)
+    axios.get(`${backend_api}/api/v3/member/get-member`)
       .then(response => {
         const members = response.data.members.map(member => ({
           fullName: member.fullName,

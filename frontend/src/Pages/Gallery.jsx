@@ -3,6 +3,9 @@ import '../Css/Gallery.css';
 import Footer from '../Components/Footer';
 import BlueLoader from '../Components/BlueLoader'; // Import the BlueLoader component
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const Gallery = () => {
   const [images, setImages] = useState([]);
   const [name, setName] = useState('');
@@ -19,7 +22,7 @@ const Gallery = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/get-images`);
+      const response = await fetch(`${backend_api}/api/v4/gallery/get-images`);
       const data = await response.json();
       setImages(data.images);
 

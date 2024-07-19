@@ -4,6 +4,9 @@ import axios from 'axios';
 import Loader from "../Components/Loader"; 
 import "./EventContainer.css";
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const EventContainer = () => {
   const [upcomingEvent, setUpcomingEvent] = useState(null);
   const [remainingTime, setRemainingTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -40,7 +43,7 @@ const EventContainer = () => {
 
   const fetchUpcomingEvent = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v5/event/get-event`);
+      const response = await axios.get(`${backend_api}/api/v5/event/get-event`);
       const data = response.data;
 
       const currentTimestamp = new Date().getTime();

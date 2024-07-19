@@ -4,13 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import BlueLoader from "../Components/BlueLoader";
 import "./BlogContainer.css";
 
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const BlogContainer = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v6/blog/get-blogs`)
+    axios.get(`${backend_api}/api/v6/blog/get-blogs`)
       .then(response => {
         if (response.data.success) {
           setEvents(response.data.blogs.slice(0, 2)); // Limit to only two events

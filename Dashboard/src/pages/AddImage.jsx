@@ -5,6 +5,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './AddImage.css';
 import toast from "react-hot-toast"
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const AddImage = () => {
   const [imageName, setImageName] = useState('');
   const [date, setDate] = useState(new Date());
@@ -24,7 +27,7 @@ const AddImage = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/upload-image`,
+        `${backend_api}/api/v4/gallery/upload-image`,
         formData,
         {
           headers: {

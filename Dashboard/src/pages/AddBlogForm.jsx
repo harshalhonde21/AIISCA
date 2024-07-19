@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./AddBlogForm.css";
 import toast from "react-hot-toast"
 
+const backend_api = import.meta.env.VITE_BACKEND_API
 
 export default function AddBlogForm() {
   const [title, setTitle] = useState("");
@@ -25,7 +26,7 @@ export default function AddBlogForm() {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_API}/api/v6/blog/add-blog`,
+        `${backend_api}/api/v6/blog/add-blog`,
         formData,
         {
           headers: {

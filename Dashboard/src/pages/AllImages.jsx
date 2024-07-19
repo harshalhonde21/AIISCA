@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const AllImages = () => {
   const [images, setImages] = useState([]);
   const [editImageId, setEditImageId] = useState(null);
@@ -18,7 +21,7 @@ const AllImages = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/get-images`);
+      const response = await axios.get(`${backend_api}/api/v4/gallery/get-images`);
       setImages(response.data.images);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -62,7 +65,7 @@ const AllImages = () => {
     }
 
     try {
-      await axios.put(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/update-image/${id}`, formData, {
+      await axios.put(`${backend_api}/api/v4/gallery/update-image/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -78,7 +81,7 @@ const AllImages = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_BACKEND_API}/api/v4/gallery/delete-image/${id}`);
+      await axios.delete(`${backend_api}/api/v4/gallery/delete-image/${id}`);
       setImages(images.filter(image => image._id !== id));
       alert('Image deleted successfully');
     } catch (error) {

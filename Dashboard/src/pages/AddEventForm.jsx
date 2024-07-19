@@ -5,6 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import "./AddEventForm.css"; // Assuming your CSS file is named AddEventForm.css and is in the same directory
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const AddEventForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -22,7 +25,7 @@ const AddEventForm = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_API}/api/v5/event/upload-event`,
+        `${backend_api}/api/v5/event/upload-event`,
         formData,
         {
           headers: {

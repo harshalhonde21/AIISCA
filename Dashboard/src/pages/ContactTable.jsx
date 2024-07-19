@@ -4,11 +4,14 @@ import { DownloadTableExcel } from 'react-export-table-to-excel';
 import axios from 'axios';
 import '../pages/ContactTable.css';
 
+
+const backend_api = import.meta.env.VITE_BACKEND_API
+
 const ContactTable = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_API}/api/v2/contact/get-contacts`)
+    axios.get(`${backend_api}/api/v2/contact/get-contacts`)
       .then(response => {
         const contacts = response.data.contacts.map(contact => ({
           id: contact._id, // Add an id field here

@@ -5,6 +5,10 @@ import Footer from "../Components/Footer";
 import { FiPhoneOutgoing } from "react-icons/fi";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
+
+
+const backend_api = import.meta.env.VITE_BACKEND_API;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -28,7 +32,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_API}/api/v2/contact/add-contacts`,
+        `${backend_api}/api/v2/contact/add-contacts`,
         formData,
         {
           headers: {
