@@ -1,0 +1,86 @@
+/* FileUpload.css */
+.addreport {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* .addreport :root {
+  --felx: {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+} */
+
+.addreport h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.addreport form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addreport label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.addreport input[type="file"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.addreport button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addreport button:hover {
+  background-color: #0056b3;
+}
+
+.addreport p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #28a745;
+  text-align: center;
+}
+
+.addreport p.error {
+  color: #dc3545;
+}
+.addreport .pdf ,.addreport .pdf-title{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  
+}
+
+.report-title{
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+}

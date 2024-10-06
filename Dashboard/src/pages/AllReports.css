@@ -1,0 +1,89 @@
+/* AllReports.css */
+
+.all-reports {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.all-reports h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.reports-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+  gap: 15px;
+}
+
+.report-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.report-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.report-thumbnail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.report-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.view-button,
+.download-button {
+  background-color: #0400ff;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.view-button:hover,
+.download-button:hover {
+  background-color: #0f144c;
+}
+
+.download-button {
+  background-color: #0400ff;
+
+}
+
+.download-button:hover {
+  background-color: #181680;
+}
+.all-reports .thumbnail{
+  display: flex;
+  justify-content: center;
+}
+.all-reports img{
+  border-radius: 10px;
+}

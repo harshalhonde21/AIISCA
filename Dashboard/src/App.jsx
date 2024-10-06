@@ -15,6 +15,8 @@ import { Toaster } from "react-hot-toast";
 import AllBlogs from "./pages/AllBlogs";
 import AllEvents from "./pages/AllEvents";
 import AllImages from "./pages/AllImages";
+import AllReports from "./pages/AllReports";
+import AddReport from "./pages/AddReport"
 
 function App() {
   const dispatch = useDispatch();
@@ -74,6 +76,17 @@ function App() {
         <Route
           path="/allimages"
           element={isAuthenticated ? <AllImages /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/addReport"
+          // element={isAuthenticated ? <AddReport /> : <Navigate to="/" />}
+          element={<AddReport />}
+        />
+        <Route
+          path="/allReports"
+          // element={isAuthenticated ? <AllReports /> : <Navigate to="/" />}
+          element={<AllReports />}
+
         />
         <Route
           path="/membershiptable"

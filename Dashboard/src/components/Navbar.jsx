@@ -101,6 +101,28 @@ const Navbar = () => {
             All Image
           </NavLink>
           <NavLink
+            to="/addReport"
+            className="navbar-item"
+            style={{
+              borderBottom:
+                location.pathname === "/addReport" ? "2px solid white" : "none",
+            }}
+            onClick={closeSidebar}
+          >
+            Add Report
+          </NavLink>
+          <NavLink
+            to="/allReports"
+            className="navbar-item"
+            style={{
+              borderBottom:
+                location.pathname === "/allReports" ? "2px solid white" : "none",
+            }}
+            onClick={closeSidebar}
+          >
+            All Report
+          </NavLink>
+          <NavLink
           to="/membershiptable"
           className="navbar-item"
           style={{
@@ -111,6 +133,7 @@ const Navbar = () => {
           >
           Membership Table
           </NavLink>
+
           {isAuthenticated && (<NavLink
             to="/profile"
             className="navbar-item"
@@ -121,7 +144,8 @@ const Navbar = () => {
             onClick={closeSidebar}
           >
             Profile
-          </NavLink>)}
+          </NavLink>
+        )}
         </div>
         <div className="navbar-icon" onClick={toggleSidebar}>
           {showSidebar ? <FaTimes /> : <FaBars />}
