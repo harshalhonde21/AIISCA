@@ -9,12 +9,16 @@ const reportSchema = new mongoose.Schema({
   reportTitle: {
     type: String,
     required: true,
+    unique:true,
   },
   thumbnailUrl:{
     type: String,
     required: true,
+  },
+  desc:{
+    type: String,
+    required: true,
   }
-  
 }, { timestamps: true });
 
 const Report = mongoose.model('AIISCAReports', reportSchema);

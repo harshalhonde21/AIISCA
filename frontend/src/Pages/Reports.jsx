@@ -77,6 +77,10 @@ const AllReports = () => {
                 {report.reportTitle}
               </p>
               <p>
+                <b>Description : </b>
+                {report.desc}
+              </p>
+              <p>
                 <b>Date : </b>
                 {timeAgo(report.createdAt).slice(0, 17)}
               </p>

@@ -9,6 +9,8 @@ const AddReport = () => {
   const [thumbnail, setThumbnail] = useState(null);
   const [loader,setLoader]=useState()
   const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+
   const navigate = useNavigate();
   const backend_api = import.meta.env.VITE_BACKEND_API;
 
@@ -25,6 +27,8 @@ const AddReport = () => {
       formData.append("pdf", file);
       formData.append("thumbnail_name",thumbnail_name)
       formData.append("thumbnail",thumbnail)
+      formData.append("desc",desc)
+
 
       formData.forEach(e=>console.log(e)
       )
@@ -74,7 +78,7 @@ const AddReport = () => {
           />
         </div>
         <div className="pdf">
-          <label htmlFor="pdf">Select PDF file:</label>
+          <label htmlFor="pdf">Select PDF file</label>
           <input
             type="file"
             id="pdf"
@@ -85,7 +89,7 @@ const AddReport = () => {
           />
         </div>
         <div className="pdf">
-          <label htmlFor="thumbnail">Select Thumbnail:</label>
+          <label htmlFor="thumbnail">Select Thumbnail</label>
           <input
             type="file"
             name="thumbnail"
@@ -96,7 +100,13 @@ const AddReport = () => {
           />
           
         </div>
-
+        <div className="pdf-title">
+          <label htmlFor="desc">Description</label>
+          <textarea name=""  id="desc" className="report-title"
+          onChange={(e) => setDesc(e.target.value)}
+          required></textarea>
+        
+        </div>
 
         <button type="submit">
         {loader ? (

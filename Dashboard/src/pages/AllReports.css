@@ -87,3 +87,6 @@
 .all-reports img{
   border-radius: 10px;
 }
+.report-item p{
+  width: 200px;
+}

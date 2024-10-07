@@ -5,9 +5,9 @@ import cloudinary from "../config/cloudinary.js";
 // Upload report controller
 export const uploadReport = async (req, res) => {
   try {
-    const { pdf_title } = req.body;
+    const { pdf_title,desc } = req.body;
     const files = req.files;
-    // console.log(req.files, req.body, "skfdnksjsdkfjksjfdkjskdffk");
+    console.log(req.files, req.body, "skfdnksjsdkfjksjfdkjskdffk");
 
      // Extract PDF and thumbnail URLs from Cloudinary
     const pdfFile = req.files['pdf'][0]; // Access PDF file
@@ -21,6 +21,7 @@ export const uploadReport = async (req, res) => {
       reportUrl: pdfUrl,
       reportTitle: pdf_title,
       thumbnailUrl: thumbnailUrl,
+      desc:desc,
     });
 
     // Save the report in the database

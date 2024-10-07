@@ -79,13 +79,13 @@ function App() {
         />
         <Route
           path="/addReport"
-          element={isAuthenticated ? <AddReport /> : <Navigate to="/" />}
-          // element={<AddReport />}
+          // element={isAuthenticated ? <AddReport /> : <Navigate to="/" />}
+          element={<AddReport />}
         />
         <Route
           path="/allReports"
-          element={isAuthenticated ? <AllReports /> : <Navigate to="/" />}
-          // element={<AllReports />}
+          // element={isAuthenticated ? <AllReports /> : <Navigate to="/" />}
+          element={<AllReports />}
 
         />
         <Route
