@@ -7,7 +7,7 @@ export const uploadReport = async (req, res) => {
   try {
     const { pdf_title,desc } = req.body;
     const files = req.files;
-    console.log(req.files, req.body, "skfdnksjsdkfjksjfdkjskdffk");
+    // console.log(req.files, req.body, "skfdnksjsdkfjksjfdkjskdffk");
 
      // Extract PDF and thumbnail URLs from Cloudinary
     const pdfFile = req.files['pdf'][0]; // Access PDF file
