@@ -37,6 +37,9 @@ const Navbar = ({ location }) => {
             <li className={location.pathname === "/gallery" ? "active" : ""}>
               <Link onClick={toggleMenu} to="/gallery">Gallery</Link>
             </li>
+            <li className={location.pathname === "/reports" ? "active" : ""}>
+              <Link onClick={toggleMenu} to="/reports">Reports</Link>
+            </li>
             <li className={location.pathname === "/contact" ? "active" : ""}>
               <Link onClick={toggleMenu} to="/contact">Contact Us</Link>
             </li>

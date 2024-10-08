@@ -13,6 +13,7 @@ import Manifesto from "./Pages/Manifesto";
 import Demands from "./Pages/Demands";
 import ParticularEvent from "./Pages/ParticularEvent";
 import ParticularBlog from "./Pages/ParticularBlog";
+import Reports from "./Pages/Reports";
 
 const App = () => {
   const location = useLocation();
@@ -31,6 +32,8 @@ const App = () => {
         <Route path="/demands" element={<Demands />} />
         <Route path="/event" element={<Event />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/reports" element={<Reports />} />
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/blog" element={<Blog />} />
