@@ -1,7 +1,7 @@
 /* AllReports.css */
 
 .all-reports {
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 120px auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -19,7 +19,7 @@
 
 .reports-gallery {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
  
   gap: 15px;
